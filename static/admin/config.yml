@@ -18,7 +18,7 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'layout'
     label: 'Layout'
-    folder: 'src/content/layout.yml'
+    file: 'src/content/layout.yml'
     create: true
     fields:
       - { label: 'Page title', name: 'page-title', widget: 'string' }
