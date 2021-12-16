@@ -18,14 +18,16 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'layout'
     label: 'Layout'
-    file: 'src/content/layout.yml'
-    create: true
-    fields:
-      - { label: 'Page title', name: 'page-title', widget: 'string' }
-      - { label: 'Footer description', name: 'footer-desc', widget: 'string' }
-      - name: 'footer-links'
-        label: 'Footer links'
-        widget: list
+    files:
+      - label: Site layout
+        name: site-layout
+        file: src/content/layout.yml
         fields:
-          - { label: 'Href', name: 'href', widget: 'string' }
-          - { label: 'Label', name: 'label', widget: 'string' }
+          - { label: 'Page title', name: 'page-title', widget: 'string' }
+          - { label: 'Footer description', name: 'footer-desc', widget: 'string' }
+          - name: 'footer-links'
+            label: 'Footer links'
+            widget: list
+            fields:
+              - { label: 'Href', name: 'href', widget: 'string' }
+              - { label: 'Label', name: 'label', widget: 'string' }
