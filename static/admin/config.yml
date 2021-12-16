@@ -20,12 +20,12 @@ collections:
     label: 'Layout'
     files:
       - label: Site layout
-        name: site-layout
-        file: src/content/layout.yml
+        name: siteLayout
+        file: src/content/layout.json
         fields:
-          - { label: 'Page title', name: 'page-title', widget: 'string' }
-          - { label: 'Footer description', name: 'footer-desc', widget: 'string' }
-          - name: 'footer-links'
+          - { label: 'Page title', name: 'pageTitle', widget: 'string' }
+          - { label: 'Footer description', name: 'footerDescription', widget: 'string' }
+          - name: 'footerLinks'
             label: 'Footer links'
             widget: list
             fields:

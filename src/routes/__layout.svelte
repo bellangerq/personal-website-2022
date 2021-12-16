@@ -1,5 +1,11 @@
+<script>
+	import layoutContent from '../content/layout.json';
+
+	export let content = layoutContent;
+</script>
+
 <header>
-	<a href="/">Home</a>
+	<a href="/">{content.pageTitle}</a>
 </header>
 
 <main>
@@ -7,10 +13,14 @@
 </main>
 
 <footer>
-	<p>Stay connected</p>
+	<p>{content.footerDescription}</p>
 	<ul>
-		<li>Twitter</li>
-		<li>GitHub</li>
-		<li>LinkedIn</li>
+		{#each content.footerLinks as link}
+			<li>
+				<a href={link.url}>
+					{link.label}
+				</a>
+			</li>
+		{/each}
 	</ul>
 </footer>
