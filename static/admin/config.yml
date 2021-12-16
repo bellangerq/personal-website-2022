@@ -8,11 +8,24 @@ publish_mode: editorial_workflow
 
 collections:
   - name: 'article'
-    label: 'Articles'
-    folder: 'src/articles'
+    label: 'Article'
+    folder: 'src/content/articles'
     create: true
     slug: '{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'layout'
+    label: 'Layout'
+    folder: 'src/content/layout.yml'
+    create: true
+    fields:
+      - { label: 'Page title', name: 'page-title', widget: 'string' }
+      - { label: 'Footer description', name: 'footer-desc', widget: 'string' }
+      - name: 'footer-links'
+        label: 'Footer links'
+        widget: list
+        fields:
+          - { label: 'Href', name: 'href', widget: 'string' }
+          - { label: 'Label', name: 'label', widget: 'string' }
