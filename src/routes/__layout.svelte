@@ -1,3 +1,7 @@
+<script context="module">
+	import '../assets/style/main.scss';
+</script>
+
 <script>
 	import layoutContent from '../content/layout.json';
 
