@@ -3,34 +3,14 @@
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ fetch }) {
-		const url = 'https://jsonplaceholder.typicode.com/posts';
-		const res = await fetch(url);
-
-		if (res.ok) {
-			const articles = await res.json();
-			return {
-				props: {
-					articles
-				}
-			};
-		}
-
-		return {
-			status: res.status,
-			error: new Error(`Could not load articles at: ${url}`)
-		};
-
-		/**
-		 * const res = await fetch('/articles.json');
+		const res = await fetch('/articles.json');
 		const articles = await res.json();
-		console.log(articles);
 
 		return {
 			props: {
 				articles
 			}
 		};
-		*/
 	}
 </script>
 
@@ -43,7 +23,7 @@
 	{#each articles as article}
 		<li>
 			<h2>
-				<a href="/blog/{article.id}">{article.title}</a>
+				<a href="/blog/{article.metadata.slug}">{article.metadata.title}</a>
 			</h2>
 		</li>
 	{/each}

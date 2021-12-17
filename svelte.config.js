@@ -1,4 +1,4 @@
-// import { mdsvex } from 'mdsvex';
+import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-netlify';
 import sveltePreprocess from 'svelte-preprocess';
 
@@ -8,9 +8,11 @@ const config = {
 		adapter: adapter(),
 		target: '#svelte'
 	},
-	extensions: ['.svelte', '.svx'],
+	extensions: ['.svelte', '.svx', '.md'],
 	preprocess: [
-		// mdsvex(),
+		mdsvex({
+			extensions: ['.svx', '.md']
+		}),
 		sveltePreprocess({
 			scss: {
 				prependData: "@import 'src/assets/style/variables.scss';"
