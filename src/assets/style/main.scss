@@ -1,5 +1,93 @@
-@import './reset.scss';
+@import url('https://rsms.me/inter/inter.css');
+
+@import './_reset.scss';
+@import './_variables.scss';
+@import './_functions.scss';
+@import './_print.scss';
+
+html {
+	font-family: 'Inter', sans-serif;
+
+	@supports (font-variation-settings: normal) {
+		font-family: 'Inter var', sans-serif;
+	}
+}
+
+body {
+	background: var(--c-background);
+	color: var(--c-content);
+	max-width: toRem(1200);
+	margin: 0 auto;
+	padding: toRem(16);
+	font-size: toRem(20);
+	line-height: 1.5;
+}
+
+::selection {
+	background-clip: initial;
+	-webkit-background-clip: initial;
+	-webkit-text-fill-color: initial;
+	background-color: var(--c-lightgray);
+	color: var(--c-background);
+}
+
+*:focus:not(:focus-visible) {
+	outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+	}
+}
 
 h1 {
-	color: paleturquoise;
+	font-size: toRem(72);
+	font-weight: 900;
+	line-height: 1.2;
+	background: linear-gradient(
+		var(--gradient-angle-unit),
+		var(--c-gradient-start),
+		var(--c-gradient-end)
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	display: inline-block;
+	margin-bottom: toRem(32);
+
+	@include small {
+		font-size: toRem(48);
+	}
+}
+
+h2 {
+	font-size: toRem(32);
+	line-height: 1.2;
+}
+
+p.intro {
+	max-width: toRem(800);
+	margin-bottom: toRem(144);
+	font-size: toRem(24);
+	font-weight: 600;
+
+	@include small {
+		font-size: toRem(20);
+		margin-bottom: toRem(32);
+	}
+}
+
+a,
+button {
+	color: currentColor;
+	text-decoration: none;
+
+	@include focus {
+		outline: toRem(3) solid var(--c-gradient-end);
+		outline-offset: toRem(2);
+	}
 }
