@@ -2,10 +2,10 @@
 
 ## Todo
 
-- Animate lines with intersection observer (https://codepen.io/njmcode/pen/wBpGxR?editors=1100)
-- Make 3 home blocks fade in
+- Toggle light or dark mode
+- English version of static pages
 
-## Developing
+## Development
 
 Install dependencies:
 

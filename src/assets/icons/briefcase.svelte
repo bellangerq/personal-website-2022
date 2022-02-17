@@ -15,7 +15,7 @@
 	stroke-linejoin="round"
 >
 	<defs>
-		<linearGradient id="icon-gradient" gradientTransform="rotate(var(--gradient-angle))">
+		<linearGradient id="icon-gradient" gradientTransform="rotate(10)">
 			<stop offset="0%" stop-color="var(--c-gradient-start)" />
 			<stop offset="100%" stop-color="var(--c-gradient-end)" />
 		</linearGradient>

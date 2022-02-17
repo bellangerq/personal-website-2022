@@ -44,12 +44,16 @@ body {
 	}
 }
 
+a {
+	scroll-margin-bottom: toRem(24);
+}
+
 h1 {
 	font-size: toRem(72);
 	font-weight: 900;
 	line-height: 1.2;
 	background: linear-gradient(
-		var(--gradient-angle-unit),
+		var(--gradient-angle),
 		var(--c-gradient-start),
 		var(--c-gradient-end)
 	);
@@ -78,6 +82,15 @@ p.intro {
 	@include small {
 		font-size: toRem(20);
 		margin-bottom: toRem(32);
+	}
+
+	a {
+		text-decoration: underline;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: var(--c-lightgray);
+		}
 	}
 }
 

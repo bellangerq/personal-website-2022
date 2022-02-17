@@ -1,8 +1,11 @@
 <script>
+	import PageHead from '../components/page-head.svelte';
 	import Merge from '../assets/icons/merge.svelte';
 	import Briefcase from '../assets/icons/briefcase.svelte';
 	import Book from '../assets/icons/book.svelte';
 </script>
+
+<PageHead title="Bonjour - Quentin Bellanger" description="" />
 
 <h1>Quentin Bellanger</h1>
 
@@ -31,8 +34,8 @@
 			<a href="/cv">Curriculum vitæ</a>
 		</h2>
 		<p>
-			Expériences, formations, motivations et envies : un résumé de ma vie professionnelle. Et non,
-			je n'ai plus LinkedIn.
+			Un résumé de mes différentes expériences, mes études ainsi que mes motivations et envies
+			professionnelles. Et non, je n'ai plus LinkedIn.
 		</p>
 	</li>
 
@@ -41,7 +44,7 @@
 		<h2 class="temp">Blog (bientôt)</h2>
 		<p>
 			Un blog sur lequel j'écris occasionnellement des articles sur le développement,
-			l'accessibilité ou le web en général.
+			l'accessibilité numérique et le web en général.
 		</p>
 	</li>
 </ul>

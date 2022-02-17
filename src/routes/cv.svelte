@@ -2,6 +2,7 @@
 	import Download from '../assets/icons/download.svelte';
 	import Bookmark from '../assets/icons/bookmark.svelte';
 	import Briefcase from '../assets/icons/briefcase.svelte';
+	import PageHead from '../components/page-head.svelte';
 	import Experience from '../components/experience.svelte';
 	import { onMount } from 'svelte';
 
@@ -14,6 +15,8 @@
 
 	let trainingsEl;
 	let revealTrainings = false;
+
+	let canPrint;
 
 	onMount(() => {
 		const observer = new IntersectionObserver(
@@ -36,6 +39,8 @@
 
 		observer.observe(experiencesEl);
 		observer.observe(trainingsEl);
+
+		canPrint = typeof window.print === 'function';
 	});
 
 	const experiences = [
@@ -105,6 +110,8 @@
 	];
 </script>
 
+<PageHead title="Curriculum vitæ - Quentin Bellanger" description="" />
+
 <h1>Curric&shy;ulum vitæ</h1>
 <h1 class="print-only">Quentin Bellanger</h1>
 
@@ -113,10 +120,13 @@
 	dolor sit amet consectetur adipisicing elit. Blanditiis corporis iste cumque sunt cum, quo qui
 	aliquid nisi ipsam nemo exercitationem ad alias deleniti quaerat reprehenderit vel, eius, ipsa
 	optio!
-	<button on:click={print} class="download">
-		<Download class="download-icon" />
-		Télécharger
-	</button>
+
+	{#if canPrint}
+		<button on:click={print} class="download">
+			<Download class="download-icon" />
+			Télécharger
+		</button>
+	{/if}
 </p>
 
 <Briefcase class="icon" />
@@ -150,6 +160,11 @@
 		cursor: pointer;
 		transition: transform 0.3s ease;
 
+		&:disabled {
+			color: var(--c-lightgray);
+			cursor: not-allowed;
+		}
+
 		@media print {
 			display: none;
 		}
@@ -158,7 +173,7 @@
 			width: toRem(18);
 		}
 
-		&:hover {
+		&:hover:not(:disabled) {
 			transform: scale(1.1);
 		}
 	}
@@ -185,7 +200,7 @@
 			top: 0;
 			bottom: 0;
 			border-radius: toRem(2);
-			background-image: linear-gradient(60deg, var(--c-gradient-start), var(--c-gradient-end));
+			background-image: linear-gradient(60deg, var(--c-gradient-end), var(--c-gradient-start));
 			background-repeat: no-repeat;
 			width: toRem(2);
 			transform: scaleY(0);

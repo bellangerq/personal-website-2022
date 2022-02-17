@@ -3,9 +3,9 @@
 	export { className as class };
 	export let title;
 	export let start;
-	export let end;
+	export let end = null;
 	export let description;
-	export let tags;
+	export let tags = [];
 </script>
 
 <li class={className} aria-hidden="true">
@@ -48,7 +48,7 @@
 
 	.tag {
 		background: linear-gradient(
-			var(--gradient-angle-unit),
+			var(--gradient-angle),
 			var(--c-gradient-start),
 			var(--c-gradient-end)
 		);

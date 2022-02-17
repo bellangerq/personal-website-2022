@@ -9,8 +9,7 @@ $br-small: toRem(600);
 	--c-gradient-start: #1b1b9b;
 	--c-gradient-end: #10704d;
 
-	--gradient-angle: 60;
-	--gradient-angle-unit: 60deg;
+	--gradient-angle: 60deg;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,6 +18,7 @@ $br-small: toRem(600);
 		--c-content: #ffffff;
 		--c-lightgray: #d9d9d9;
 		--c-gradient-start: #6060f0;
+		--c-gradient-start: #7878f1;
 		--c-gradient-end: #36f2ad;
 	}
 }
