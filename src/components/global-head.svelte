@@ -1,14 +1,8 @@
 <script>
-	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
+	import { variables } from '$lib/variables';
 
-	let url;
-	let ogImageUrl;
-
-	onMount(() => {
-		url = `${$page.host}${$page.path}`;
-		ogImageUrl = `${$page.host}/og.png`;
-	});
+	const url = variables.baseUrl;
+	const ogImageUrl = `${variables.baseUrl}/og.png`;
 </script>
 
 <svelte:head>
