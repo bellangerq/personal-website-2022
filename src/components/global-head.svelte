@@ -1,7 +1,10 @@
 <script>
+	import { page } from '$app/stores';
 	import { variables } from '$lib/variables';
 
-	const url = variables.baseUrl;
+	const url = variables.baseUrl + $page.path;
+
+	console.log(url);
 	const ogImageUrl = `${variables.baseUrl}/og.png`;
 </script>
 
