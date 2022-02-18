@@ -5,7 +5,10 @@
 	import Book from '../assets/icons/book.svelte';
 </script>
 
-<PageHead title="Bonjour - Quentin Bellanger" description="" />
+<PageHead
+	title="Bonjour - Quentin Bellanger"
+	description="Je suis développeur web et je me focalise sur la qualité web et l'expérience utilisateur pour créer des interfaces accessibles à tout le monde."
+/>
 
 <h1>Quentin Bellanger</h1>
 
@@ -34,7 +37,7 @@
 		</h2>
 		<p>
 			Un résumé de mes différentes expériences, mes études ainsi que mes motivations et envies
-			professionnelles. Et non, je n'ai plus LinkedIn.
+			professionnelles. Le tout sans LinkedIn.
 		</p>
 	</li>
 

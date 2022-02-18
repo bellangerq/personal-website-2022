@@ -49,77 +49,83 @@
 			start: 'Avril 2021',
 			end: "Aujourd'hui",
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptate molestiae quo, quasi amet optio distinctio nulla assumenda repellendus possimus odio minus sunt? Ad perspiciatis ducimus doloremque iure, vero nemo.',
-			tags: ['vue.js', 'a11y', 'design system']
+				"Création de sites web (marketing, applications, landing pages...), audits d'accessibilité RGAA et mise en conformité, formation en accessibilité et en qualité web, relation client et gestion administrative.",
+			tags: ['accessibilité', 'qualité web', 'vue.js']
 		},
 		{
 			title: 'Développeur front-end - HelloAsso',
 			start: 'Juin 2019',
 			end: 'Mars 2021',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptate molestiae quo, quasi amet optio distinctio nulla assumenda repellendus possimus odio minus sunt? Ad perspiciatis ducimus doloremque iure, vero nemo.',
-			tags: ['vue.js', 'a11y', 'design system']
+				"Développement de la partie back-office de l'application en Vue.js, création d'un design system utilisable sur l'ensemble des projets front et mise en place de guidelines d'accessibilité et de qualité web pour les équipes techniques.",
+			tags: ['vue.js', 'accessibilité', 'design system']
 		},
 		{
 			title: 'Développeur front-end - Muxu.Muxu',
 			start: 'Janvier 2018',
 			end: 'Février 2019',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptate molestiae quo, quasi amet optio distinctio nulla assumenda repellendus possimus odio minus sunt? Ad perspiciatis ducimus doloremque iure, vero nemo.',
-			tags: ['vue.js', 'a11y', 'design system']
+				"Développement front-end pour de nombreux sites marketing de startups (Aircall, Payfit, Spendesk, Todoist...) sur une stack Nuxt.js + CMS headless. Sensibilisation de l'équipe sur le sujet de l'accessibilité numérique.",
+			tags: ['nuxt.js', 'contentful', 'sites marketing']
 		},
 		{
 			title: 'Développeur web - Freelance',
 			start: 'Septembre 2016',
 			end: 'Décembre 2019',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptate molestiae quo, quasi amet optio distinctio nulla assumenda repellendus possimus odio minus sunt? Ad perspiciatis ducimus doloremque iure, vero nemo.',
-			tags: ['vue.js', 'a11y', 'design system']
+				'Réalisation de petits projets web en parallèle de mon travail salarié, principalement des sites web statiques.',
+			tags: ['landing pages', 'vue.js']
 		},
 		{
 			title: 'Community Manager - Wopata',
 			start: 'Avril 2015',
 			end: 'Décembre 2016',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptate molestiae quo, quasi amet optio distinctio nulla assumenda repellendus possimus odio minus sunt? Ad perspiciatis ducimus doloremque iure, vero nemo.',
-			tags: ['vue.js', 'a11y', 'design system']
+				"Prise en charge de la communication interne et externe de l'agence : rédaction d'articles de blog et de newsletters, organisation d'évènements, gestion des réseaux sociaux...",
+			tags: ['marketing', 'seo', 'community management']
 		}
 	];
 
 	const trainings = [
 		{
-			title: 'Opquast',
+			title: 'Opquast (910 points)',
 			start: 'Octobre 2020',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptate molestiae quo, quasi amet optio distinctio nulla assumenda repellendus possimus odio minus sunt? Ad perspiciatis ducimus doloremque iure, vero nemo.'
+				'Certification en «Maîtrise de la qualité en projet Web» qui comprend un socle de règles, de compétences et de vocabulaire multidisciplinaires.',
+			link: {
+				title: 'Certification Opquast',
+				href: 'https://directory.opquast.com/fr/certificat/OE1Y9D/'
+			}
 		},
 		{
 			title: 'Le Wagon',
 			start: 'Octobre 2017',
 			end: 'Décembre 2017',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptate molestiae quo, quasi amet optio distinctio nulla assumenda repellendus possimus odio minus sunt? Ad perspiciatis ducimus doloremque iure, vero nemo.'
+				'Bootcamp de 9 semaines en développement web à Bordeaux avec Ruby et Ruby on Rails pour apprendre la programmation et la conduite de projet web.'
 		},
 		{
 			title: 'ESCEN',
 			start: 'Janvier 2018',
 			end: 'Février 2019',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptate molestiae quo, quasi amet optio distinctio nulla assumenda repellendus possimus odio minus sunt? Ad perspiciatis ducimus doloremque iure, vero nemo.'
+				"MBA (Master of Business Administration) en web business qui couvre l'ensemble des disciplines associées : référencement, community management, analytics, emailing..."
 		}
 	];
 </script>
 
-<PageHead title="Curriculum vitæ - Quentin Bellanger" description="" />
+<PageHead
+	title="Curriculum vitæ - Quentin Bellanger"
+	description="Un résumé de mes expériences, formations, envies et motivations professionnelles."
+/>
 
 <h1>Curric&shy;ulum vitæ</h1>
 <h1 class="print-only">Quentin Bellanger</h1>
 
 <p class="intro">
-	Introduction : ce que je fais actuellement, ce que je recherche et ce que j'aime. Lorem ipsum,
-	dolor sit amet consectetur adipisicing elit. Blanditiis corporis iste cumque sunt cum, quo qui
-	aliquid nisi ipsam nemo exercitationem ad alias deleniti quaerat reprehenderit vel, eius, ipsa
-	optio!
+	Je suis actuellement développeur web chez /tmp. Ce qui me plaît, c'est de créer des interfaces
+	accessibles qui répondent aux besoins des utilisateurs avant tout. Je favorise toujours
+	l'usabilité à l'esthétique et considère la technologie comme étant un moyen et non une fin.
 
 	{#if canPrint}
 		<button on:click={print} class="download">

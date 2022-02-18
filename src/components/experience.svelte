@@ -6,6 +6,7 @@
 	export let end = null;
 	export let description;
 	export let tags = [];
+	export let link = null;
 </script>
 
 <li class={className} aria-hidden="true">
@@ -21,6 +22,9 @@
 				<li class="tag">{tag}</li>
 			{/each}
 		</ul>
+	{/if}
+	{#if link}
+		<a class="link" href={link.href}>{link.title}</a>
 	{/if}
 </li>
 
@@ -44,6 +48,7 @@
 	.tags {
 		display: flex;
 		gap: toRem(8);
+		flex-wrap: wrap;
 	}
 
 	.tag {
@@ -57,5 +62,15 @@
 		font-size: toRem(14);
 		font-weight: 600;
 		padding: toRem(2) toRem(8);
+	}
+
+	.link {
+		font-size: toRem(16);
+		text-decoration: underline;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: var(--c-lightgray);
+		}
 	}
 </style>
