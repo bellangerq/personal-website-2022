@@ -10,9 +10,9 @@
 <h1>Quentin Bellanger</h1>
 
 <p class="intro">
-	I am a front-end developer based in Bordeaux, France. The main focus of my work is to build
-	accessible, inclusive and user-friendly web interfaces. Since April 2021, I co-founded /tmp, a
-	company specialized in web accessibility and web development.
+	Bonjour ! Je suis développeur web installé à Tours en France. Je me focalise sur la qualité web et
+	l'expérience utilisateur pour créer des interfaces accessibles à tout le monde. J'aime également
+	le jeu de rôle, le médiéval fantastique, la randonnée et les galettes bretonnes.
 </p>
 
 <ul class="blocks">
@@ -22,9 +22,8 @@
 			<a href="https://slash-tmp.dev">/tmp</a>
 		</h2>
 		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus id pariatur facilis
-			perspiciatis adipisci minus inventore sint iure aperiam illo mollitia, quam libero soluta
-			voluptas? Beatae quisquam et excepturi enim.
+			Je suis co-fondateur de /tmp, un petit studio web. On fait du développement, de
+			l'accessibilité numérique et de la qualité. On fait les choses bien et on aime ça.
 		</p>
 	</li>
 
