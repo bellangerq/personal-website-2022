@@ -9,7 +9,7 @@
 	export let link = null;
 </script>
 
-<li class={className} aria-hidden="true">
+<li class={className}>
 	<h3>{title}</h3>
 	<div class="period">
 		{start}
