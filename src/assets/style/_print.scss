@@ -28,6 +28,15 @@
 		-webkit-text-fill-color: initial !important;
 	}
 
+	a {
+		text-decoration: none !important;
+
+		&::after {
+			content: ' (' attr(href) ') ';
+			font-style: italic;
+		}
+	}
+
 	.intro {
 		font-size: toRem(14) !important;
 		margin-bottom: toRem(32) !important;
