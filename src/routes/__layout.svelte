@@ -24,7 +24,9 @@
 		<ul class="menu">
 			{#each links as link}
 				<li>
-					<a class="item" aria-current={$page.path === link.href} href={link.href}>{link.title}</a>
+					<a class="item" aria-current={$page.url.pathname === link.href} href={link.href}
+						>{link.title}</a
+					>
 				</li>
 			{/each}
 		</ul>

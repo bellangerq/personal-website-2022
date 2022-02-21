@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { variables } from '$lib/variables';
 
-	const url = variables.baseUrl + $page.path;
+	const url = variables.baseUrl + $page.url.pathname;
 
 	const ogImageUrl = `${variables.baseUrl}/og.png`;
 </script>

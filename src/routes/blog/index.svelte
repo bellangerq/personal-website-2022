@@ -10,8 +10,14 @@
 </script>
 
 <script>
+	import Calendar from '../../assets/icons/calendar.svelte';
+	import PageHead from '../../components/page-head.svelte';
+	import { formatDate } from '$lib/date';
+
 	export let posts;
 </script>
+
+<PageHead title="Blog - Quentin Bellanger" description="" />
 
 <h1>Blog</h1>
 
@@ -21,8 +27,50 @@
 	sapiente aperiam mollitia?
 </p>
 
-<ul>
+<ul class="post-list">
 	{#each posts as post}
-		<li><a href={`/blog/${post.slug}`}>{post.title}</a></li>
+		<li>
+			<h2 class="title">
+				<a class="link" href={`/blog/${post.slug}`}>{post.title}</a>
+			</h2>
+			<div class="date">
+				<Calendar class="calendar" />
+				<span>Publié le <time>{formatDate(post.date)}</time></span>
+			</div>
+		</li>
 	{/each}
 </ul>
+
+<style lang="scss">
+	.post-list {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(48);
+
+		.title {
+			margin-bottom: toRem(8);
+		}
+
+		.link {
+			border-radius: toRem(4);
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: var(--c-lightgray);
+				text-decoration: underline;
+			}
+		}
+
+		.date {
+			display: flex;
+			align-items: center;
+			gap: toRem(8);
+			font-size: toRem(16);
+		}
+
+		:global(.calendar) {
+			height: toRem(20);
+			width: toRem(20);
+		}
+	}
+</style>

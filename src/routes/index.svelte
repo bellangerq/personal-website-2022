@@ -43,7 +43,9 @@
 
 	<li class="block">
 		<Book class="icon" />
-		<h2 class="temp">Blog (bientôt)</h2>
+		<h2>
+			<a href="/blog">Blog</a>
+		</h2>
 		<p>
 			Un blog sur lequel j'écris occasionnellement des articles sur le développement,
 			l'accessibilité numérique et le web en général.
@@ -87,10 +89,6 @@
 		h2 {
 			display: inline-block;
 			margin-bottom: toRem(8);
-
-			&.temp {
-				font-style: italic;
-			}
 		}
 
 		p {
