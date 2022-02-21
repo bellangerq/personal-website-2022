@@ -9,7 +9,8 @@
 
 	export let links = [
 		{ title: 'Accueil', href: '/' },
-		{ title: 'CV', href: '/cv' }
+		{ title: 'CV', href: '/cv' },
+		{ title: 'Blog', href: '/blog' }
 	];
 </script>
 

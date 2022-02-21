@@ -2,7 +2,6 @@
 
 ## Todo
 
-- Toggle light or dark mode
 - English version of static pages
 - Blog management (Markdown files, CMS?...)
 
