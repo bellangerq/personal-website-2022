@@ -10,8 +10,7 @@ const sassGlobalData = `
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter(),
-		target: '#svelte'
+		adapter: adapter()
 	},
 	extensions: ['.svelte', '.svx', '.md'],
 	preprocess: [
