@@ -4,7 +4,6 @@
 
 	const url = variables.baseUrl + $page.path;
 
-	console.log(url);
 	const ogImageUrl = `${variables.baseUrl}/og.png`;
 </script>
 

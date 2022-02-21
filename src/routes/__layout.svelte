@@ -5,6 +5,7 @@
 
 <script>
 	import { page } from '$app/stores';
+	import ThemeToggle from '../components/theme-toggle.svelte';
 
 	export let links = [
 		{ title: 'Accueil', href: '/' },
@@ -27,6 +28,7 @@
 			{/each}
 		</ul>
 	</nav>
+	<ThemeToggle />
 </header>
 
 <main id="main">
@@ -68,6 +70,8 @@
 	}
 
 	.header {
+		display: flex;
+		justify-content: space-between;
 		margin: 0 auto toRem(64);
 		padding: toRem(16) 0;
 	}

@@ -2,7 +2,7 @@
 
 $br-small: toRem(600);
 
-:root {
+html {
 	--c-background: #ffffff;
 	--c-content: #121212;
 	--c-lightgray: #4a4a4a;
@@ -10,10 +10,8 @@ $br-small: toRem(600);
 	--c-gradient-end: #10704d;
 
 	--gradient-angle: 60deg;
-}
 
-@media (prefers-color-scheme: dark) {
-	:root {
+	&.dark {
 		--c-background: #121212;
 		--c-content: #ffffff;
 		--c-lightgray: #d9d9d9;

@@ -21,6 +21,7 @@ body {
 	padding: toRem(16);
 	font-size: toRem(20);
 	line-height: 1.5;
+	transition: background 0.2s ease;
 }
 
 ::selection {
