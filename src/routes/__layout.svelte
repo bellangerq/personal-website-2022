@@ -70,6 +70,7 @@
 	}
 
 	.header {
+		align-items: center;
 		display: flex;
 		justify-content: space-between;
 		margin: 0 auto toRem(64);
