@@ -119,7 +119,6 @@
 		color: var(--c-lightgray);
 		padding: toRem(16) 0;
 		margin: toRem(64) auto 0;
-		max-width: toRem(1200);
 		font-size: toRem(14);
 
 		p + p {
