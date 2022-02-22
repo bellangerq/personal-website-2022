@@ -17,14 +17,17 @@
 	export let posts;
 </script>
 
-<PageHead title="Blog - Quentin Bellanger" description="" />
+<PageHead
+	title="Blog - Quentin Bellanger"
+	description="J'écris sur le développement web, l'accessibilité numérique et de manière plus générale sur le
+web."
+/>
 
 <h1>Blog</h1>
 
 <p class="intro">
-	Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque quidem dolorem, officia, vel
-	repellendus odit corrupti consequatur optio eos est quis. Modi doloribus atque ratione iusto a
-	sapiente aperiam mollitia?
+	J'écris sur le développement web, l'accessibilité numérique et de manière plus générale sur le
+	web. Ce blog me sert aussi de bloc notes lorsque j'apprends de nouvelles choses.
 </p>
 
 <ul class="post-list">
@@ -49,6 +52,7 @@
 
 		.title {
 			margin-bottom: toRem(8);
+			max-width: toRem(700);
 		}
 
 		.link {
