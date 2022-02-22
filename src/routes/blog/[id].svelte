@@ -74,7 +74,7 @@
 	}
 
 	:global(.post-content li + li) {
-		margin-top: toRem(8);
+		margin-top: toRem(0);
 	}
 
 	:global(.post-content a) {
@@ -89,15 +89,20 @@
 
 	:global(.post-content ul, .post-content ol) {
 		list-style: initial;
-		padding-left: toRem(24);
+		padding-left: toRem(32);
+	}
+
+	:global(.post-content ol) {
+		list-style: decimal;
+	}
+
+	:global(.post-content li::marker) {
+		color: var(--c-gradient-start);
+		font-size: toRem(16);
 	}
 
 	:global(.post-content li:nth-child(odd)::marker) {
 		color: var(--c-gradient-end);
-	}
-
-	:global(.post-content li:nth-child(even)::marker) {
-		color: var(--c-gradient-start);
 	}
 
 	:global(.post-content blockquote) {
@@ -142,7 +147,7 @@
 	}
 
 	:global(.post-content pre) {
-		border: toRem(2) solid;
-		padding: toRem(8);
+		border: toRem(2) solid var(--c-lightgray);
+		font-size: toRem(16);
 	}
 </style>

@@ -8,14 +8,14 @@ As we see a cookies banner on every website today, it's really important to make
 
 What is a cookies banner made of? It's most of the time a container with actions. It is often accompagnied with a modal where users can configure advanced settings.
 
-<abbr title="Too long; didn't read">TL;DR</abbr>: I made a [small demo on CodePen](https://codepen.io/bellangerq/full/vYOwpvm).
+TL;DR: I made a [small demo on CodePen](https://codepen.io/bellangerq/full/vYOwpvm).
 
-<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="result" data-user="bellangerq" data-slug-hash="vYOwpvm" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Accessible cookie banner">
+<p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="vYOwpvm" data-user="bellangerq" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/bellangerq/pen/vYOwpvm">
   Accessible cookie banner</a> by Quentin Bellanger (<a href="https://codepen.io/bellangerq">@bellangerq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 ## DOM order
 
