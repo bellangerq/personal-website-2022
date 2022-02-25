@@ -140,14 +140,19 @@
 	}
 
 	:global(.post-content code:not([class*='language-'])) {
-		border: toRem(1) solid;
+		border: toRem(1) solid var(--c-lightgray);
 		border-radius: toRem(4);
-		font-size: 0.9em;
+		color: var(--c-lightgray);
+		font-size: toRem(16);
 		padding: toRem(2) toRem(2);
+		white-space: nowrap;
 	}
 
 	:global(.post-content pre) {
 		border: toRem(2) solid var(--c-lightgray);
 		font-size: toRem(16);
+		border-radius: toRem(4);
+		overflow: auto;
+		padding: toRem(8);
 	}
 </style>
