@@ -145,7 +145,6 @@
 		color: var(--c-lightgray);
 		font-size: toRem(16);
 		padding: toRem(2) toRem(2);
-		white-space: nowrap;
 	}
 
 	:global(.post-content pre) {
