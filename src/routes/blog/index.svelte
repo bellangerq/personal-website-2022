@@ -27,7 +27,9 @@ web."
 
 <p class="intro">
 	J'écris sur le développement web, l'accessibilité numérique et de manière plus générale sur le
-	web. Ce blog me sert aussi de bloc notes lorsque j'apprends de nouvelles choses.
+	web. Ce blog me sert aussi de <span lang="en"
+		><abbr title="Today I Learned">TIL</abbr> (Today I Learned)</span
+	> lorsque j'apprends de nouvelles choses.
 </p>
 
 <ul class="post-list">

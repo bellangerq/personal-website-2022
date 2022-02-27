@@ -11,12 +11,23 @@ html {
 
 	--gradient-angle: 60deg;
 
-	&.dark {
-		--c-background: #121212;
-		--c-content: #ffffff;
-		--c-lightgray: #d9d9d9;
-		--c-gradient-start: #6060f0;
-		--c-gradient-start: #7878f1;
-		--c-gradient-end: #36f2ad;
+	@media not print {
+		&.dark {
+			--c-background: #121212;
+			--c-content: #ffffff;
+			--c-lightgray: #d9d9d9;
+			--c-gradient-start: #6060f0;
+			--c-gradient-start: #7878f1;
+			--c-gradient-end: #36f2ad;
+		}
 	}
+
+	// @media print {
+	// 	--c-background: #121212 !important;
+	// 	--c-content: #ffffff !important;
+	// 	--c-lightgray: #d9d9d9 !important;
+	// 	--c-gradient-start: #6060f0 !important;
+	// 	--c-gradient-start: #7878f1 !important;
+	// 	--c-gradient-end: #36f2ad !important;
+	// }
 }

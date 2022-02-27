@@ -132,6 +132,11 @@
 			<Download class="download-icon" />
 			Télécharger
 		</button>
+	{:else}
+		<a href="/cv.txt" download="cv-quentin-bellanger" class="download">
+			<Download class="download-icon" />
+			Télécharger
+		</a>
 	{/if}
 </p>
 
@@ -164,11 +169,12 @@
 		font-size: toRem(16);
 		gap: toRem(8);
 		cursor: pointer;
+		text-decoration: none;
 		transition: transform 0.3s ease;
+		width: max-content;
 
-		&:disabled {
-			color: var(--c-lightgray);
-			cursor: not-allowed;
+		&:hover {
+			transform: scale(1.1);
 		}
 
 		@media print {
@@ -177,10 +183,6 @@
 
 		:global(.download-icon) {
 			width: toRem(18);
-		}
-
-		&:hover:not(:disabled) {
-			transform: scale(1.1);
 		}
 	}
 

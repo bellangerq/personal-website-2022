@@ -1,0 +1,42 @@
+PRÉSENTATION
+
+Je suis actuellement développeur web chez /tmp.
+Ce qui me plaît, c'est de créer des interfaces accessibles qui répondent aux besoins des utilisateurs avant tout.
+Je favorise toujours l'usabilité à l'esthétique et considère la technologie comme étant un moyen et non une fin.
+
+EXPÉRIENCE PROFESSIONNELLE
+
+Développeur web et fondateur - /tmp (Avril 2021 - Aujourd'hui)
+- Création de sites web (marketing, applications, landing pages...)
+- Audits d'accessibilité RGAA et mise en conformité.
+- Formation en accessibilité et en qualité web.
+- Relation client et gestion administrative.
+
+Développeur front-end - HelloAsso (Juin 2019 - Mars 2021)
+- Développement de la partie back-office de l'application en Vue.js.
+- Création d'un design system utilisable sur l'ensemble des projets front.
+- Mise en place de guidelines d'accessibilité et de qualité web pour les équipes techniques.
+
+Développeur front-end - Muxu.Muxu (Janvier 2018 - Février 2019)
+- Développement front-end pour de nombreux sites marketing de startups (Aircall, Payfit, Spendesk, Todoist...) sur une stack Nuxt.js + CMS headless.
+- Sensibilisation de l'équipe sur le sujet de l'accessibilité numérique.
+
+Développeur web - Freelance (Septembre 2016 - Décembre 2019)
+- Réalisation de petits projets web en parallèle de mon travail salarié, principalement des sites web statiques.
+
+Community Manager - Wopata (Avril 2015 - Décembre 2016)
+- Prise en charge de la communication interne et externe de l'agence.
+- Rédaction d'articles de blog et de newsletters.
+- Organisation d'évènements.
+- Gestion des réseaux sociaux.
+
+FORMATION
+
+Opquast - 910 points (Octobre 2020)
+Certification en «Maîtrise de la qualité en projet Web» qui comprend un socle de règles, de compétences et de vocabulaire multidisciplinaires.
+
+Le Wagon (Octobre 2017 - Décembre 2017)
+Bootcamp de 9 semaines en développement web à Bordeaux avec Ruby et Ruby on Rails pour apprendre la programmation et la conduite de projet web.
+
+ESCEN (Janvier 2018 - Février 2019)
+MBA (Master of Business Administration) en web business qui couvre l'ensemble des disciplines associées : référencement, community management, analytics, emailing...
