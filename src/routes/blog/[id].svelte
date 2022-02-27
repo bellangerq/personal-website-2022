@@ -89,7 +89,7 @@
 
 	:global(.post-content ul, .post-content ol) {
 		list-style: initial;
-		padding-left: toRem(32);
+		padding-left: toRem(16);
 	}
 
 	:global(.post-content ol) {
