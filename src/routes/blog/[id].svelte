@@ -74,7 +74,7 @@
 	}
 
 	:global(.post-content li + li) {
-		margin-top: toRem(0);
+		margin-top: toRem(12);
 	}
 
 	:global(.post-content a) {
