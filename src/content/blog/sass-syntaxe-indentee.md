@@ -11,6 +11,7 @@ J'ai transité tout le style du projet de `.sass` à `.scss` (spoiler alert : c'
 - Tout code CSS valide est du code SCSS valide. Ce n'est pas le cas pour la syntaxe indentée. Il faut retirer toutes les accolades et les points virgules (entre autres, voir dernier point).
 - La syntaxe indentée n'est pas formattable avec [Prettier](https://prettier.io/), qui est installé sur beaucoup de projet front-end. Pas fou pour harmoniser le style de code.
 - Du code indenté n'est pas forcément plus lisible. Je trouve même qu'il l'est moins car il faut bien repérer l'indentation pour ne pas se perdre.
+- De mon expérience, beaucoup plus de personnes utilisent la syntaxe SCSS, et donc la majorité du code trouvé sur le web suit cette syntaxe.
 - L'utilisation de certaines propriétés est rendue compliquée. Un exemple récent que j'ai eu a été pour la propriété [`grid-template-areas`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas) qui est souvent plus lisible lorsqu'elle est écrite sur plusieurs lignes. Et avec la syntaxe indentée, ça n'est pas possible :
 
   ```sass
