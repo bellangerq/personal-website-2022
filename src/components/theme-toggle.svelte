@@ -1,58 +1,63 @@
 <script>
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 
 	import Sun from '../assets/icons/sun.svelte';
 	import Moon from '../assets/icons/moon.svelte';
 
-	const MODES = {
+	const THEMES = {
 		light: 'light',
-		dark: 'dark'
+		dark: 'dark',
+		auto: 'auto'
 	};
 
-	let currentTheme = MODES.light;
+	const STORAGE_KEY = 'color-scheme';
+
+	let currentTheme = THEMES.light;
 
 	onMount(() => {
-		// Fetch and use theme from localStorage
-		const savedTheme = localStorage.getItem('color-scheme');
+		// Get and apply initial theme
+		currentTheme = getTheme();
+		setPreference();
 
-		if (savedTheme) {
-			currentTheme = savedTheme;
-			addDocumentTheme();
-			return;
-		}
-
-		// Retrieve theme from user preferences
-		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-		if (prefersDark) {
-			currentTheme = MODES.dark;
-		}
-
-		addDocumentTheme();
+		// Listen to system theme changes
+		// window
+		// 	.matchMedia('(prefers-color-scheme: dark)')
+		// 	.addEventListener('change', ({ matches: isDark }) => {
+		// 		currentTheme = isDark ? 'dark' : 'light';
+		// 		setPreference();
+		// 	});
 	});
 
-	function toggleMode() {
-		removeDocumentTheme();
+	/**
+	 * Retrieve theme in localStorage first, then in use settings.
+	 */
+	function getTheme() {
+		const savedTheme = localStorage.getItem(STORAGE_KEY);
 
-		currentTheme = currentTheme === MODES.light ? MODES.dark : MODES.light;
-
-		addDocumentTheme();
-		localStorage.setItem('color-scheme', currentTheme);
+		if (savedTheme) {
+			return savedTheme;
+		} else {
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? THEMES.dark : THEMES.light;
+		}
 	}
 
-	function removeDocumentTheme() {
-		document.documentElement.classList.remove(currentTheme);
+	function toggleTheme() {
+		currentTheme = currentTheme === THEMES.light ? THEMES.dark : THEMES.light;
+
+		setPreference();
 	}
 
-	function addDocumentTheme() {
-		document.documentElement.classList.add(currentTheme);
+	/**
+	 * Apply theme changes to <html>
+	 */
+	function setPreference() {
+		localStorage.setItem(STORAGE_KEY, currentTheme);
+		document.documentElement.setAttribute('data-theme', currentTheme);
 	}
 
 	function hello() {
 		return {
 			duration: 200,
-			// css: (t, u) => `transform: scale(${t}) translateX(${u * 100}%)`
 			css: (t, u) => `opacity: ${t}; transform: scale(${t})`
 		};
 	}
@@ -60,7 +65,6 @@
 	function goodbye() {
 		return {
 			duration: 0,
-			// css: (t, u) => `transform: scale(${t}) translateX(${u * 100}%)`
 			css: (t, u) => `opacity: ${u}`
 		};
 	}
@@ -68,10 +72,10 @@
 
 <button
 	class="toggle"
-	on:click={toggleMode}
-	aria-label={`Passer en mode ${currentTheme === MODES.light ? 'sombre' : 'clair'}`}
+	on:click={toggleTheme}
+	aria-label={`Passer en thème ${currentTheme === THEMES.light ? 'sombre' : 'clair'}`}
 >
-	{#if currentTheme === MODES.dark}
+	{#if currentTheme === THEMES.dark}
 		<div in:hello out:goodbye>
 			<Sun />
 		</div>

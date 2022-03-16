@@ -26,7 +26,7 @@ html {
 	--prism-keyword-color: #0574b7;
 
 	@media not print {
-		&.dark {
+		&[data-theme='dark'] {
 			--c-background: #121212;
 			--c-content: #ffffff;
 			--c-lightgray: #d9d9d9;
