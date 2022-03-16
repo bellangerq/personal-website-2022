@@ -4,15 +4,14 @@
 	import Sun from '../assets/icons/sun.svelte';
 	import Moon from '../assets/icons/moon.svelte';
 
+	const STORAGE_KEY = 'color-scheme';
 	const THEMES = {
 		light: 'light',
 		dark: 'dark',
 		auto: 'auto'
 	};
 
-	const STORAGE_KEY = 'color-scheme';
-
-	let currentTheme = THEMES.light;
+	let currentTheme;
 
 	onMount(() => {
 		// Get and apply initial theme
@@ -20,16 +19,16 @@
 		setPreference();
 
 		// Listen to system theme changes
-		// window
-		// 	.matchMedia('(prefers-color-scheme: dark)')
-		// 	.addEventListener('change', ({ matches: isDark }) => {
-		// 		currentTheme = isDark ? 'dark' : 'light';
-		// 		setPreference();
-		// 	});
+		window
+			.matchMedia('(prefers-color-scheme: dark)')
+			.addEventListener('change', ({ matches: isDark }) => {
+				currentTheme = isDark ? 'dark' : 'light';
+				setPreference();
+			});
 	});
 
 	/**
-	 * Retrieve theme in localStorage first, then in use settings.
+	 * Retrieve theme in localStorage first, then in user settings.
 	 */
 	function getTheme() {
 		const savedTheme = localStorage.getItem(STORAGE_KEY);
