@@ -2,6 +2,7 @@
 title: 'scroll-margin et la navigation au clavier'
 description: "La propriété CSS scroll-margin permet d'améliorer la navigation au clavier en ajoutant une marge de sécurité."
 date: 2022-02-22
+lang: 'fr'
 ---
 
 Parmi les choses que j'ai redécouvert en mettant à jour mon site, il y a la propriété CSS `scroll-margin` ([scroll-margin sur MDN](https://developer.mozilla.org/fr/docs/Web/CSS/scroll-margin)). Elle permet d'appliquer un décalage sur le container de défilement de l'élément ciblé. C'est souvent utilisé avec l'API `scroll-snap`.

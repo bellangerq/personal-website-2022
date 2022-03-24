@@ -2,6 +2,7 @@
 title: 'How to avoid using front-end libraries'
 description: 'Exploiting existing tools and creating custom helpers can help dealing with the drawbacks of importing external code.'
 date: 2018-07-06
+lang: 'en'
 ---
 
 It's very tempting when working on a web project to import [*insert external library*] to do [*insert task*]. It often gives developers the ability to save time relying on external code instead of doing manually something. But it has drawbacks.

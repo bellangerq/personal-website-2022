@@ -2,6 +2,7 @@
 title: 'Bind parent-scope attributes to a sub node in Vue'
 description: 'Overriding the default behaviour for spreading parent-scope attributes in Vue.js.'
 date: 2019-11-13
+lang: 'en'
 ---
 
 If you work with Vue.js, you probably already created (or will) your own components within your application. By component, I mean a small piece of user interface such as a button, a text input or a carousel.

@@ -1,18 +1,19 @@
 ---
-title: "Building your personal website: a complete guide for junior developers"
-description: "From goal setting to publishing: everything you need to know to ship your first project."
+title: 'Building your personal website: a complete guide for junior developers'
+description: 'From goal setting to publishing: everything you need to know to ship your first project.'
 date: 2017-05-26
+lang: 'en'
 ---
 
 ## Why do I need a website?
 
-I think the obvious answers have already been covered so I won’t be long on them. Here they are. First, recruiters who dive deep into Google to get information about you, your background and also about what Google wants to show (*remember to control what search engines say about you*). Then, having a website is the best idea to show people who you are. Think of your website as your digital identity. And finally it’s also a good opportunity to showcase your work and projects. Many designers put their last productions on their portfolio, why developers couldn’t?
+I think the obvious answers have already been covered so I won’t be long on them. Here they are. First, recruiters who dive deep into Google to get information about you, your background and also about what Google wants to show (_remember to control what search engines say about you_). Then, having a website is the best idea to show people who you are. Think of your website as your digital identity. And finally it’s also a good opportunity to showcase your work and projects. Many designers put their last productions on their portfolio, why developers couldn’t?
 
 But there are less obvious reasons for junior developers to code their own website. Let’s discover them.
 
 ### Real project
 
-It’s not a secret: working on real projects is much more exciting and challenging (*and fun*) than coding a fake website locally on your browser. For me, one of the biggest frustration as junior developer is to have nothing to show. You try to code things but it’s hard to have your first projects. We all know that projects we started months ago but never finished and which are today abandoned. Let’s turn your personal website as (*one of*) your first real project!
+It’s not a secret: working on real projects is much more exciting and challenging (_and fun_) than coding a fake website locally on your browser. For me, one of the biggest frustration as junior developer is to have nothing to show. You try to code things but it’s hard to have your first projects. We all know that projects we started months ago but never finished and which are today abandoned. Let’s turn your personal website as (_one of_) your first real project!
 
 What’s cool in there? It’s that you’re gonna do everything from A to Z. Setup your environment, choosing your tools, design the pages... From the coding part to the publishing part, you are the master. And you have no client in front to sell you what to do. You’re totally free.
 
@@ -22,13 +23,13 @@ What’s cool in there? It’s that you’re gonna do everything from A to Z. Se
 
 Working on a new project is the occasion to experiment. You may want to discover a new framework, to try a new coding process or to give a chance to this brand new publishing platform. So whether you are using the same tools or new ones, you will learn new things and also create your own opinion about these tools.
 
-As you code, you will add to your skills new items. It can be a new CSS property or a jQuery function (*for example, I’m working on a project that use the `<canvas>` tag that I never used before*). And it will be in real application, not only in a book so you really know how to use it (*I think there is a huge difference between theory and practice in code*).
+As you code, you will add to your skills new items. It can be a new CSS property or a jQuery function (_for example, I’m working on a project that use the `<canvas>` tag that I never used before_). And it will be in real application, not only in a book so you really know how to use it (_I think there is a huge difference between theory and practice in code_).
 
 ### It’s about you
 
 This website will talk about you and only you. It’s always good to have something to give to search engines when people are asking about you. Today, having a digital presence is better than having nothing, so show your best to Google and remember to create something that represents yourself.
 
-When you are working for yourself, be very demanding. It will be more challenging for you and you’ll learn much more in this way. If you put hard work and dedication on crafting this website, the results will be big: you will have your own space on the internet, people will look at you the same way you want to be seen and you will be proud of what you did (*yes it also counts*).
+When you are working for yourself, be very demanding. It will be more challenging for you and you’ll learn much more in this way. If you put hard work and dedication on crafting this website, the results will be big: you will have your own space on the internet, people will look at you the same way you want to be seen and you will be proud of what you did (_yes it also counts_).
 
 ![](https://cdn-images-1.medium.com/max/6000/1*KtKwhrB3f6o-MTA1JF1q4A.png)
 
@@ -58,13 +59,13 @@ But how personal branding can be applied to your website? First comes the design
 
 ## Several kinds of websites
 
-You may wonder what you should display on your website and how to structure it: one page or multiple, few content or long descriptions...? The answers depend on your goal: whether you want to recruit subscribers for your newsletter or to sell your services to potential customers, your website will look slightly different (*I don’t take into account blogs that are different of personal website*).
+You may wonder what you should display on your website and how to structure it: one page or multiple, few content or long descriptions...? The answers depend on your goal: whether you want to recruit subscribers for your newsletter or to sell your services to potential customers, your website will look slightly different (_I don’t take into account blogs that are different of personal website_).
 
 ### The minimal website
 
-This is the most simple website you can build. It’s here to introduce yourself, that’s it. Consequently, it contains only basic info about you such as: your name, position, description and contact information. Depending on your goal, you can also include a call-to-action: "*Get in touch*", "*Follow me on Twitter*", "*Subscribe to my personal newsletter*"...
+This is the most simple website you can build. It’s here to introduce yourself, that’s it. Consequently, it contains only basic info about you such as: your name, position, description and contact information. Depending on your goal, you can also include a call-to-action: "_Get in touch_", "_Follow me on Twitter_", "_Subscribe to my personal newsletter_"...
 
-Few information means it will be something very soft. But you can turn in many different ways. Something very minimalist? Something with more content? Something unusual? You’re free, choose what fits best with your style. Here are two examples from developers I like (*links on images*):
+Few information means it will be something very soft. But you can turn in many different ways. Something very minimalist? Something with more content? Something unusual? You’re free, choose what fits best with your style. Here are two examples from developers I like (_links on images_):
 
 ![](https://cdn-images-1.medium.com/max/2600/1*OZygmDE-SUPZ3C6tBkF_fQ.png)
 
@@ -72,9 +73,9 @@ Few information means it will be something very soft. But you can turn in many d
 
 ### The portfolio website
 
-It contains the same information as in the minimal website but includes projects. This kind of website is a really nice idea if you’re looking for a job: you can easily showcase what you did and what you’re capable of. For example: "*I know how to use [name-of-technology] as you could see in [name-of-the-project]*".
+It contains the same information as in the minimal website but includes projects. This kind of website is a really nice idea if you’re looking for a job: you can easily showcase what you did and what you’re capable of. For example: "_I know how to use [name-of-technology] as you could see in [name-of-the-project]_".
 
-You can also add case studies and completely explain the creation from A to Z (*like in example 2*) of your projects. Don’t forget to put your personal side projects (*including your website!*) as well as projects you did in previous jobs or during your studies.
+You can also add case studies and completely explain the creation from A to Z (_like in example 2_) of your projects. Don’t forget to put your personal side projects (_including your website!_) as well as projects you did in previous jobs or during your studies.
 
 > Make sure to highlight every details of your work: pictures, title, link, description...
 
@@ -100,7 +101,7 @@ Now that your goal is set, your personal brand defined and your website type cho
 
 ### Tools you can use
 
-CMS or websites builders? Wrong way. Everyone can build a [WordPress](https://wordpress.com/) website or subscribe to services like [Carrd](http://carrd.co) (*which is still really great*), but by doing this, you won’t learn anything on coding. It’s clearly more challenging and fun to code your own website, right? So let all these websites builders for later, launch your text editor and open your first `<html>` tag.
+CMS or websites builders? Wrong way. Everyone can build a [WordPress](https://wordpress.com/) website or subscribe to services like [Carrd](http://carrd.co) (_which is still really great_), but by doing this, you won’t learn anything on coding. It’s clearly more challenging and fun to code your own website, right? So let all these websites builders for later, launch your text editor and open your first `<html>` tag.
 
 A basic website built with HTML and CSS is clearly enough for a first simple personal website. You can also add some JavaScript if you need animations. Basically, try everything you need. Step by step, go further with new technologies. For example, you can implement Sass, Gulp, jQuery in futures versions to extend your stack and master new languages and tools.
 
@@ -112,7 +113,7 @@ From goal setting to publishing, here is a list of personal recommendations that
 - **[Sketch](https://www.sketchapp.com/)**: best tool for me to design mockups. For a free alternative, check [Figma](https://www.figma.com).
 - **Terminal**: the best friend of any developer. Once you start with it, you can’t do anything without.
 - **[Middleman](https://middlemanapp.com/)**: an amazing framework for building static websites. It’s easy to use and well documented.
-- **[Surge](http://surge.sh/)**: easy-to-use publishing tool for static website (*also free*). 6 lines in your terminal and you’re online.
+- **[Surge](http://surge.sh/)**: easy-to-use publishing tool for static website (_also free_). 6 lines in your terminal and you’re online.
 
 ![](https://cdn-images-1.medium.com/max/2048/1*398o3SEfBr5JdJOu97nfUg.png)
 

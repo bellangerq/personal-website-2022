@@ -2,6 +2,7 @@
 title: 'Copying text with the Clipboard() API'
 description: 'The successor of `execCommand()` has come and allows playing with the clipboard with ease (and promises).'
 date: 2018-08-13
+lang: 'en'
 ---
 
 Activation code, share link, voucher... Copying content to the clipboard can come from many situations. Let's explore how to do it on the developer side with Vanilla JavaScript.

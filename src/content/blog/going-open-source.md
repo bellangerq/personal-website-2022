@@ -2,6 +2,7 @@
 title: 'Going open source for the first time'
 description: "After one year working with Vue.js, I am glad to announce that I'm launching my first open source project!"
 date: 2019-02-11
+lang: 'en'
 ---
 
 After few years working in web development, I am glad to announce that I'm launching my first open source project: [hyper-link](https://github.com/muxumuxu/hyper-link).

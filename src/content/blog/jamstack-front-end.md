@@ -2,6 +2,7 @@
 title: 'How static websites empower front-end developers'
 description: 'Learn more about the benefits of the JAMstack way of building websites for front-end developers.'
 date: 2018-06-11
+lang: 'en'
 ---
 
 As a front-end developer, I never really enjoyed back-end stuff: managing databases, monitoring servers, updating software versions... Despite some people think all this stuff is necessary for any website to work, it's not always the case. I recently drove deeper into static websites, JAMstack and all that cool stuff. I firstly enjoyed it because it reminded me the first websites I was building with good old HTML & CSS (nope, no JS at this time!). But I was especially captivated by their power and surprised that they are still called "static".

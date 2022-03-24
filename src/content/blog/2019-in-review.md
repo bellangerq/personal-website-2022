@@ -2,6 +2,7 @@
 title: '2019 in review'
 description: 'A humble throwback on what happened in 2019 on a personal and professional level. And some wishes for 2020!'
 date: 2020-01-02
+lang: 'en'
 ---
 
 As 2019 comes to its end, it's the perfect time to jump back in this year to highlight what happened to me personally and professionally.

@@ -2,6 +2,7 @@
 title: 'The input type isn’t an detail'
 description: 'How a simple HTML attribute can degrade the user experience of your visitors.'
 date: 2016-10-18
+lang: 'en'
 ---
 
 Have you ever experienced that before when you where browsing a website on your smartphone?

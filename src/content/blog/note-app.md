@@ -2,6 +2,7 @@
 title: 'Create a simple note-taking app'
 description: 'Learn by doing a note-taking app with this beginners-oriented tutorial.'
 date: 2017-08-02
+lang: 'en'
 ---
 
 I love to write. Either it's for me or for people, to share things here, about code or random things: it helps me to empty my mind and to write down what I'm thinking about. As I'm always looking for new projects to improve my coding skills, I wanted to make something related with writing: a note-taking app.

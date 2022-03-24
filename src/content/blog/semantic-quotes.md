@@ -2,6 +2,7 @@
 title: 'Writing semantic quotes for the web'
 description: 'On how to build structured and meaningful quotations of the web thanks to semantic HTML5 tags.'
 date: 2018-06-18
+lang: 'en'
 ---
 
 As I am browsing the web, I'm often noticing myself inspecting websites' source code (I guess it's a web developer OCD...). I notice that many quotes on the web are losing their meaning: they are reduced to simple `<p>` tags. Let's see how developers should emphasize their original nature.

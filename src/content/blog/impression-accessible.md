@@ -2,6 +2,7 @@
 title: 'Dégradation gracieuse et impression web'
 description: "Quelques considérations d'accessibilité à prendre pour imprimer ou télécharger un fichier sur le web."
 date: 2022-02-28
+lang: 'fr'
 ---
 
 J'ai ajouté [mon CV](/cv) sur ce site et je voulais faire en sorte qu'il soit imprimable. Par "imprimer", je comprends aussi la fonction "Enregistrer en PDF". Du coup le réflexe c'était d'utiliser `window.print()`.

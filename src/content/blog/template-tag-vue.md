@@ -2,6 +2,7 @@
 title: 'Keeping a clean markup in Vue'
 description: 'Leverage the power of the template tag.'
 date: 2019-10-01
+lang: 'en'
 ---
 
 As a developer who attach a lot of importance to markup and HTML, I make sure that components I create in Vue have the minimal amount of tags and are not a big `div` soup.

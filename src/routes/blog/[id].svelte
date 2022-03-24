@@ -27,12 +27,12 @@
 	export let postContent;
 	export let meta;
 
-	const { title, description, date } = meta;
+	const { title, description, date, lang } = meta;
 </script>
 
 <PageHead title={`${title} - Quentin Bellanger`} {description} />
 
-<article class="post">
+<article class="post" lang={lang === 'en' ? lang : null}>
 	<h1>{title}</h1>
 
 	<p class="intro">{description}</p>

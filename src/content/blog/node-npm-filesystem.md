@@ -2,6 +2,7 @@
 title: 'Using Node and npm to automate writing workflow'
 description: 'Node comes with a lot of useful built-in modules. I use the filesystem API to enhance my writing workflow by automatically create Markdown files as blog posts.'
 date: 2019-05-09
+lang: 'en'
 ---
 
 I recently read [an article on Sparkbox's blog](https://seesparkbox.com/foundry/use_node_fs_instead_of_javascript_dependencies_to_scaffold_files) about using the Node `fs` module to automate file creation on a project instead of using Yeoman or any other scaffolding tool. It has the advantage of having 0 dependencies and also to precisely fit your needs.
