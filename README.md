@@ -1,9 +1,6 @@
 # personal-website-2022
 
-## Todo
-
-- English version of static pages
-- Blog management (Markdown files, CMS?...)
+This is the code of my personal website: [https://quentin-bellanger.com](https://quentin-bellanger.com).
 
 ## Development
 
@@ -19,12 +16,18 @@ Start a development server:
 yarn dev
 ```
 
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+Build website:
 
 ```bash
 yarn build
 ```
 
-> You can preview the built app with `yarn preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+Preview build:
+
+```bash
+yarn preview
+```
+
+## Deployment
+
+Every push on `main` branch will triger a deploy on Netlify.
