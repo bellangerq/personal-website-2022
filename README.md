@@ -30,4 +30,4 @@ yarn preview
 
 ## Deployment
 
-Every push on `main` branch will triger a deploy on Netlify.
+Every push on `main` branch will trigger a deploy on Netlify.
