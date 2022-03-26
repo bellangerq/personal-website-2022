@@ -22,16 +22,18 @@ const render = (posts) => `<?xml version="1.0" encoding="utf-8"?>
 	<subtitle>J'écris sur le développement web, l'accessibilité numérique et de manière plus générale sur le web.</subtitle>
 	<link href="${variables.baseUrl}/feed.xml" rel="self" type="application/atom+xml" />
 	<link href="${variables.baseUrl}" rel="alternate" type="text/html" />
+	<id>${variables.baseUrl}</id>
+	<updated>${posts[0].date}</updated>
 
 	${posts
 		.map(
-			(post) => `<item>
+			(post) => `<entry>
 				<title>${post.title}</title>
 				<link href="${variables.baseUrl}/blog/${post.slug}" />
 				<description>${post.description}</description>
 				<updated>${new Date(post.date)}</updated>
 				<id>${variables.baseUrl}/blog/${post.slug}</id>
-			</item>`
+			</entry>`
 		)
 		.join('')}
 </feed>
