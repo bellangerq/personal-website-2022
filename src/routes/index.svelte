@@ -10,9 +10,9 @@
 	description="Je suis développeur web et je me focalise sur la qualité web et l'expérience utilisateur pour créer des interfaces accessibles à tout le monde."
 />
 
-<h1>Quentin Bellanger</h1>
+<h1 class="p-name">Quentin Bellanger</h1>
 
-<p class="intro">
+<p class="intro p-note">
 	Bonjour ! Je suis développeur web installé à Tours en France. Je me focalise sur la qualité web et
 	l'expérience utilisateur pour créer des interfaces accessibles à tout le monde. J'aime également
 	le jeu de rôle, le médiéval fantastique, la randonnée et les galettes bretonnes.

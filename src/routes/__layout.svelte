@@ -34,7 +34,7 @@
 	<ThemeToggle />
 </header>
 
-<main id="main">
+<main id="main" class="h-card">
 	<slot />
 </main>
 
