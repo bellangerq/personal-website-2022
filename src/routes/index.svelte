@@ -25,7 +25,7 @@
 			<a href="https://slash-tmp.dev">/tmp</a>
 		</h2>
 		<p>
-			Je suis co-fondateur de /tmp, un petit studio web. On fait du développement, de
+			Je suis développeur web chez /tmp, un petit studio web. On fait du développement, de
 			l'accessibilité numérique et de la qualité. On fait les choses bien et on aime ça.
 		</p>
 	</li>

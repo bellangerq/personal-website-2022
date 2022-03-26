@@ -40,8 +40,8 @@
 
 <footer class="footer">
 	<p>
-		Ailleurs sur le web : <a href="https://twitter.com/bellanger_q">Twitter</a> et
-		<a href="https://github.com/bellangerq">GitHub</a>.
+		Ailleurs sur le web : <a href="https://twitter.com/bellanger_q" rel="me">Twitter</a> et
+		<a href="https://github.com/bellangerq" rel="me">GitHub</a>.
 	</p>
 	<p>
 		Crédits : ce site utilise les icônes de <a target="_blank" href="https://feathericons.com/"
