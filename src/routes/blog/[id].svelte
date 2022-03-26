@@ -32,17 +32,17 @@
 
 <PageHead title={`${title} - Quentin Bellanger`} {description} />
 
-<article class="post" lang={lang === 'en' ? lang : null}>
-	<h1>{title}</h1>
+<article class="post h-entry" lang={lang === 'en' ? lang : null}>
+	<h1 class="p-name">{title}</h1>
 
-	<p class="intro">{description}</p>
+	<p class="intro p-summary">{description}</p>
 
 	<div class="date">
 		<Calendar class="calendar" />
-		<span>Publié le <time>{formatDate(date)}</time></span>
+		<span>Publié le <time datetime={date} class="dt-published">{formatDate(date)}</time></span>
 	</div>
 
-	<div class="post-content">
+	<div class="post-content e-content">
 		<svelte:component this={postContent} />
 	</div>
 </article>

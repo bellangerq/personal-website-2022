@@ -34,13 +34,16 @@ web."
 
 <ul class="post-list">
 	{#each posts as post}
-		<li>
-			<h2 class="title">
-				<a class="link" href={`/blog/${post.slug}`}>{post.title}</a>
+		<li class="h-entry">
+			<h2 class="title p-name">
+				<a class="link u-url" href={`/blog/${post.slug}`}>{post.title}</a>
 			</h2>
 			<div class="date">
 				<Calendar class="calendar" />
-				<span>Publié le <time>{formatDate(post.date)}</time></span>
+				<span
+					>Publié le <time datetime={post.date} class="dt-published">{formatDate(post.date)}</time
+					></span
+				>
 			</div>
 		</li>
 	{/each}
