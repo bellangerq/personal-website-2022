@@ -17,4 +17,10 @@
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:image" content={ogImageUrl} />
+	<link
+		type="application/atom+xml"
+		rel="alternate"
+		href={`${variables.baseUrl}/feed.xml`}
+		title="Quentin Bellanger"
+	/>
 </svelte:head>

@@ -1,6 +1,5 @@
-<!-- This file renders each individual blog post for reading. Be sure to update the svelte:head below -->
 <script context="module">
-	export async function load({ params, url }) {
+	export async function load({ params }) {
 		try {
 			const post = await import(`../../content/blog/${params.id}.md`);
 
