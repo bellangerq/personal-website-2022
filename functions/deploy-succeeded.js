@@ -30,10 +30,7 @@ async function handlePost(post) {
 	if (res.meta.result_count === 0) {
 		return sendTweet(post);
 	} else {
-		return {
-			statusCode: 400,
-			body: '⚠️ The latest blog post has already been syndicated on Twitter.'
-		};
+		return statusCode(400, '⚠️ The latest blog post has already been syndicated on Twitter.');
 	}
 }
 
@@ -47,10 +44,7 @@ async function sendTweet(post) {
 	try {
 		await client.v2.tweet(tweetContent);
 
-		return {
-			statusCode: 200,
-			body: '✅ The latest blog post has successfully been tweeted.'
-		};
+		return statusCode(200, '✅ The latest blog post has successfully been tweeted.');
 	} catch (err) {
 		throw new Error(err);
 	}
@@ -65,15 +59,27 @@ function buildPostUrl(slug) {
 }
 
 /**
+ * Log and return
+ * @param {number} code http status code
+ * @param {string} message
+ * @returns
+ */
+function statusCode(code, message) {
+	console.log(message);
+
+	return {
+		statusCode: code,
+		body: message
+	};
+}
+
+/**
  * Netlify lambda handler
  */
 exports.handler = async () => {
 	return getLatestPost()
 		.then(handlePost)
 		.catch((error) => {
-			return {
-				statusCode: 400,
-				body: `❌ Error while tweeting latest blog post: "${error}"`
-			};
+			return statusCode(400, `❌ Error while tweeting latest blog post: "${error}"`);
 		});
 };
