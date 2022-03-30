@@ -10,7 +10,8 @@
 	export let links = [
 		{ title: 'Accueil', href: '/' },
 		{ title: 'CV', href: '/cv' },
-		{ title: 'Blog', href: '/blog' }
+		{ title: 'Blog', href: '/blog' },
+		{ title: 'Notes', href: '/notes' }
 	];
 </script>
 
@@ -83,6 +84,10 @@
 	.menu {
 		display: flex;
 		gap: toRem(32);
+
+		@include small {
+			gap: toRem(20);
+		}
 	}
 
 	.item {
