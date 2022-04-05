@@ -23,4 +23,6 @@
 		href={`${variables.baseUrl}/feed.xml`}
 		title="Quentin Bellanger"
 	/>
+	<link rel="webmention" href="https://webmention.io/quentin-bellanger.com/webmention" />
+	<link rel="pingback" href="https://webmention.io/quentin-bellanger.com/xmlrpc" />
 </svelte:head>
