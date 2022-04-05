@@ -21,7 +21,7 @@
 <script>
 	import Calendar from '../../assets/icons/calendar.svelte';
 	import PageHead from '../../components/page-head.svelte';
-	import { formatDate } from '$lib/date';
+	import { readableDate } from '$lib/date';
 
 	export let postContent;
 	export let meta;
@@ -29,7 +29,7 @@
 	const { title, description, date, lang } = meta;
 </script>
 
-<PageHead title={`${title} - Quentin Bellanger`} {description} />
+<PageHead title={`Blog - ${title} - Quentin Bellanger`} {description} />
 
 <article class="post h-entry" lang={lang === 'en' ? lang : null}>
 	<h1 class="p-name">{title}</h1>
@@ -38,7 +38,7 @@
 
 	<div class="date">
 		<Calendar class="calendar" />
-		<span>Publié le <time datetime={date} class="dt-published">{formatDate(date)}</time></span>
+		<span>Publié le <time datetime={date} class="dt-published">{readableDate(date)}</time></span>
 	</div>
 
 	<div class="post-content e-content">

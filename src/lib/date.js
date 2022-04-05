@@ -3,7 +3,7 @@
  * @param {string} dateString
  * @returns
  */
-export function formatDate(dateString) {
+export function readableDate(dateString) {
 	const formattedDate = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(
 		new Date(dateString)
 	);

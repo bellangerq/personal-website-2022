@@ -12,7 +12,7 @@
 <script>
 	import Calendar from '../../assets/icons/calendar.svelte';
 	import PageHead from '../../components/page-head.svelte';
-	import { formatDate } from '$lib/date';
+	import { readableDate } from '$lib/date';
 
 	export let posts;
 </script>
@@ -41,7 +41,7 @@ web."
 			<div class="date">
 				<Calendar class="calendar" />
 				<span
-					>Publié le <time datetime={post.date} class="dt-published">{formatDate(post.date)}</time
+					>Publié le <time datetime={post.date} class="dt-published">{readableDate(post.date)}</time
 					></span
 				>
 			</div>
