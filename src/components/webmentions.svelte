@@ -14,7 +14,7 @@
 
 <details on:toggle={toggle} open={isOpen} class="webmentions">
 	<summary class="title">
-		<Chevron class="icon" />
+		<Chevron class="icon-chevron" />
 		<h2>
 			<span class="visually-hidden">{isOpen ? 'Cacher' : 'Afficher'} </span>{webmentions.length} webmentions
 		</h2>
@@ -35,7 +35,7 @@
 		border-bottom: toRem(1) solid var(--c-lightgray);
 		padding: toRem(32) 0;
 
-		&[open] :global(.icon) {
+		&[open] :global(.icon-chevron) {
 			transform: none;
 		}
 	}
@@ -46,7 +46,7 @@
 		gap: toRem(8);
 	}
 
-	:global(.icon) {
+	:global(.icon-chevron) {
 		transform: rotate(-90deg);
 		width: toRem(24);
 		transition: transform 0.2s ease;
