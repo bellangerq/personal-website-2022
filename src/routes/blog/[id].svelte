@@ -21,12 +21,25 @@
 <script>
 	import Calendar from '../../assets/icons/calendar.svelte';
 	import PageHead from '../../components/page-head.svelte';
+	import Webmentions from '../../components/webmentions.svelte';
 	import { formatDate } from '$lib/date';
+	import { fetchWebmentions } from '$lib/webmentions';
+	import { onMount } from 'svelte';
 
+	export let webmentions = [];
 	export let postContent;
 	export let meta;
 
-	const { title, description, date, lang } = meta;
+	const { title, description, date, lang, slug } = meta;
+
+	onMount(async () => {
+		try {
+			const path = `blog/${slug}`;
+			webmentions = await fetchWebmentions(path);
+		} catch (error) {
+			console.log(`Error while fetching "${path}" webmentions.`);
+		}
+	});
 </script>
 
 <PageHead title={`${title} - Quentin Bellanger`} {description} />
@@ -44,6 +57,10 @@
 	<div class="post-content e-content">
 		<svelte:component this={postContent} />
 	</div>
+
+	{#if webmentions.length}
+		<Webmentions {webmentions} />
+	{/if}
 </article>
 
 <style lang="scss">
@@ -60,12 +77,18 @@
 		align-items: center;
 		gap: toRem(8);
 		font-size: toRem(16);
-		margin-bottom: toRem(144);
+		margin-bottom: toRem(64);
+		padding-bottom: toRem(32);
+		border-bottom: toRem(1) solid var(--c-lightgray);
 	}
 
 	:global(.calendar) {
 		height: toRem(20);
 		width: toRem(20);
+	}
+
+	:global(.post-content) {
+		margin-bottom: toRem(64);
 	}
 
 	:global(.post-content * + *) {

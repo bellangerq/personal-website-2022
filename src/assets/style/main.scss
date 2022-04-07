@@ -66,7 +66,7 @@ h1 {
 	margin-bottom: toRem(32);
 
 	@include small {
-		font-size: toRem(48);
+		font-size: toRem(40);
 	}
 }
 
@@ -97,12 +97,24 @@ p.intro {
 }
 
 a,
-button {
+button,
+summary {
 	color: currentColor;
 	text-decoration: none;
+	cursor: pointer;
 
 	@include focus {
 		outline: toRem(3) solid var(--c-gradient-end);
 		outline-offset: toRem(2);
 	}
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
