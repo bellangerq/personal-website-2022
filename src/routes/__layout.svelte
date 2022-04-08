@@ -10,7 +10,8 @@
 	export let links = [
 		{ title: 'Accueil', href: '/' },
 		{ title: 'CV', href: '/cv' },
-		{ title: 'Blog', href: '/blog' }
+		{ title: 'Blog', href: '/blog' },
+		{ title: 'Photos', href: '/photos' }
 	];
 </script>
 
@@ -76,8 +77,10 @@
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 		margin: 0 auto toRem(64);
 		padding: toRem(16) 0;
+		gap: toRem(16);
 	}
 
 	.menu {

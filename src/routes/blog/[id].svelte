@@ -54,7 +54,7 @@
 		<span>Publié le <time datetime={date} class="dt-published">{formatDate(date)}</time></span>
 	</div>
 
-	<div class="post-content e-content">
+	<div class="markdown-content e-content">
 		<svelte:component this={postContent} />
 	</div>
 
@@ -85,95 +85,5 @@
 	:global(.calendar) {
 		height: toRem(20);
 		width: toRem(20);
-	}
-
-	:global(.post-content) {
-		margin-bottom: toRem(64);
-	}
-
-	:global(.post-content * + *) {
-		margin-top: toRem(20);
-	}
-
-	:global(.post-content li + li) {
-		margin-top: toRem(12);
-	}
-
-	:global(.post-content a) {
-		text-decoration: underline;
-		transition: color 0.2s ease;
-
-		&:hover {
-			color: var(--c-lightgray);
-			text-decoration: none;
-		}
-	}
-
-	:global(.post-content ul, .post-content ol) {
-		list-style: initial;
-		padding-left: toRem(16);
-	}
-
-	:global(.post-content ol) {
-		list-style: decimal;
-	}
-
-	:global(.post-content li::marker) {
-		color: var(--c-gradient-start);
-		font-size: toRem(16);
-	}
-
-	:global(.post-content li:nth-child(odd)::marker) {
-		color: var(--c-gradient-end);
-	}
-
-	:global(.post-content blockquote) {
-		font-style: italic;
-		padding: toRem(4) 0 toRem(4) toRem(16);
-		position: relative;
-
-		&::before {
-			content: '';
-			background: linear-gradient(
-				var(--gradient-angle),
-				var(--c-gradient-start),
-				var(--c-gradient-end)
-			);
-			border-radius: toRem(2);
-			position: absolute;
-			left: 0;
-			top: 0;
-			bottom: 0;
-			width: toRem(4);
-		}
-	}
-
-	:global(.post-content hr) {
-		background: linear-gradient(
-			var(--gradient-angle),
-			var(--c-gradient-start),
-			var(--c-gradient-end)
-		);
-		border-radius: toRem(2);
-		height: toRem(2);
-		border: none;
-		margin: toRem(48) 0;
-		width: 50%;
-	}
-
-	:global(.post-content code:not([class*='language-'])) {
-		border: toRem(1) solid var(--c-lightgray);
-		border-radius: toRem(4);
-		color: var(--c-lightgray);
-		font-size: toRem(16);
-		padding: toRem(2) toRem(2);
-	}
-
-	:global(.post-content pre) {
-		border: toRem(2) solid var(--c-lightgray);
-		font-size: toRem(16);
-		border-radius: toRem(4);
-		overflow: auto;
-		padding: toRem(8);
 	}
 </style>
