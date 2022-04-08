@@ -3,8 +3,6 @@
  * content to my site from the exported data. #OwnYourContent
  * TODO:
  * 	- Filter photos
- * 	- Design index page
- * 	- Design [id] page
  * 	- Run script on sample
  * 	- Run final script
  * 	- Clean and push on GitHub
@@ -14,39 +12,51 @@ import fs from 'fs';
 
 const raw = fs.readFileSync('./instagram_data/posts_1.json');
 // const photos = JSON.parse(raw);
-const photos = JSON.parse(raw).slice(340, 350);
+const photos = JSON.parse(raw).slice(200, 210);
 
 function run() {
 	photos.forEach((photo) => {
-		// Create slug
-		const fileSlug = generatePhotoSlug(photo.media[0].creation_timestamp);
-		const metaDate = generatePhotoSlug(photo.media[0].creation_timestamp, true);
-
-		// Create Markdown file
-		fs.writeFile(
-			`./src/content/photos/${fileSlug}.md`,
-			`---\nlang: fr\ndate: ${metaDate}\n---\n\n![](/photos/${fileSlug}.jpg)\n\n${photo.media[0].title}`,
-			(err) => {
-				if (err) {
-					console.error(err);
-					return;
-				}
+		// Check if photo exists
+		fs.access(`./instagram_data/${photo.media[0].uri}`, fs.F_OK, (err) => {
+			if (err) {
+				console.log('File does not exist. Skipping: ' + photo.media[0].uri + '.');
+				return;
 			}
-		);
 
-		// Move image file to /assets
-		fs.copyFile(
-			`./instagram_data/${photo.media[0].uri}`,
-			`./static/photos/${fileSlug}.jpg`,
-			(err) => {
-				if (err) {
-					console.error(err);
-					return;
+			console.log('File exists. Continue.');
+
+			// Create slug
+			const fileSlug = generatePhotoSlug(photo.media[0].creation_timestamp);
+			const date = generatePhotoSlug(photo.media[0].creation_timestamp, true);
+			const regex = /µ|ð|±|º|¤||¼/g;
+			const title = photo.media[0].title.replaceAll('  ', ' ').replaceAll(regex, '');
+
+			// Create Markdown file
+			fs.writeFile(
+				`./src/content/photos/${fileSlug}.md`,
+				`---\nlang: fr\ndate: ${date}\nalt: ''\n---\n\n${title}\n\n![](/photos/${fileSlug}.jpg)`,
+				(err) => {
+					if (err) {
+						console.error(err);
+						return;
+					}
 				}
-			}
-		);
+			);
 
-		console.log(`Photo "${fileSlug}" done!`);
+			// Move image file to /assets
+			fs.copyFile(
+				`./instagram_data/${photo.media[0].uri}`,
+				`./static/photos/${fileSlug}.jpg`,
+				(err) => {
+					if (err) {
+						console.error(err);
+						return;
+					}
+				}
+			);
+
+			console.log(`Photo "${fileSlug}" done!`);
+		});
 	});
 }
 
