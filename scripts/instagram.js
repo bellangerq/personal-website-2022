@@ -12,7 +12,7 @@ import fs from 'fs';
 
 const raw = fs.readFileSync('./instagram_data/posts_1.json');
 // const photos = JSON.parse(raw);
-const photos = JSON.parse(raw).slice(200, 210);
+const photos = JSON.parse(raw).slice(300, 310);
 
 function run() {
 	photos.forEach((photo) => {
@@ -28,8 +28,7 @@ function run() {
 			// Create slug
 			const fileSlug = generatePhotoSlug(photo.media[0].creation_timestamp);
 			const date = generatePhotoSlug(photo.media[0].creation_timestamp, true);
-			const regex = /µ|ð|±|º|¤||¼/g;
-			const title = photo.media[0].title.replaceAll('  ', ' ').replaceAll(regex, '');
+			const title = unicodeToChar(photo.media[0].title);
 
 			// Create Markdown file
 			fs.writeFile(
@@ -69,4 +68,11 @@ function generatePhotoSlug(timestamp, dateOnly = false) {
 	const m = ('0' + (date.getMonth() + 1)).slice(-2);
 	const d = ('0' + date.getDate()).slice(-2);
 	return dateOnly ? `${y}-${m}-${d}` : `${y}-${m}-${d}-${timestamp}`;
+}
+
+// Taken from: https://stackoverflow.com/a/68237082
+function unicodeToChar(s) {
+	let d = new TextDecoder();
+	let a = s.split('').map((r) => r.charCodeAt());
+	return d.decode(new Uint8Array(a));
 }
