@@ -10,69 +10,64 @@
 </script>
 
 <script>
-	import Calendar from '../../assets/icons/calendar.svelte';
 	import PageHead from '../../components/page-head.svelte';
+	import Date from '../../components/date.svelte';
 	import { formatDate } from '$lib/date';
 
 	export let photos;
-	console.log(photos);
 </script>
 
-<PageHead title="Photos - Quentin Bellanger" description="Pouet" />
+<PageHead
+	title="Photos - Quentin Bellanger"
+	description="Loin d'être un professionnel de la photo, il m'arrive parfois d'en prendre avec mon smartphone."
+/>
 
-<h1>Blog</h1>
+<h1>Photos</h1>
 
-<p class="intro">Pouet</p>
+<p class="intro">
+	Loin d'être un professionnel de la photo, il m'arrive parfois d'en prendre avec mon smartphone.
+</p>
 
-<ul class="post-list">
+<ul class="photo-list">
 	{#each photos as photo}
-		<li class="h-entry">
-			<h2 class="title p-name">
-				<a class="link u-url" href={`/photos/${photo.slug}`}>{photo.date}</a>
-			</h2>
-			<div class="date">
-				<Calendar class="calendar" />
-				<span
-					>Publiée le <time datetime={photo.date} class="dt-published"
-						>{formatDate(photo.date)}</time
-					></span
-				>
-			</div>
+		<li class="photo-item">
+			<a href={`/photos/${photo.slug}`}>
+				<span class="visually-hidden">Photo du {formatDate(photo.date)}</span>
+				<img
+					width="250"
+					height="250"
+					loading="lazy"
+					class="photo-img"
+					src={`/photos/${photo.slug}.jpg`}
+					alt=""
+				/>
+			</a>
+			<Date date={photo.date} isFeminine />
 		</li>
 	{/each}
 </ul>
 
 <style lang="scss">
-	.post-list {
-		display: flex;
-		flex-direction: column;
-		gap: toRem(48);
+	.photo-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(toRem(250), 100%), 1fr));
+		grid-gap: toRem(32);
+	}
 
-		.title {
-			margin-bottom: toRem(8);
-			max-width: toRem(700);
-		}
+	.photo-item {
+		aspect-ratio: 1;
+	}
 
-		.link {
-			border-radius: toRem(4);
-			transition: color 0.2s ease;
+	.photo-img {
+		border: toRem(3) solid;
+		border-radius: toRem(4);
+		height: 100%;
+		width: 100%;
+		margin-bottom: toRem(8);
+		transition: opacity 0.2s ease;
 
-			&:hover {
-				color: var(--c-lightgray);
-				text-decoration: underline;
-			}
-		}
-
-		.date {
-			display: flex;
-			align-items: center;
-			gap: toRem(8);
-			font-size: toRem(16);
-		}
-
-		:global(.calendar) {
-			height: toRem(20);
-			width: toRem(20);
+		&:hover {
+			opacity: 0.6;
 		}
 	}
 </style>

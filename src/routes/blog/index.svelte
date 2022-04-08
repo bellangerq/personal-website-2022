@@ -10,9 +10,8 @@
 </script>
 
 <script>
-	import Calendar from '../../assets/icons/calendar.svelte';
 	import PageHead from '../../components/page-head.svelte';
-	import { formatDate } from '$lib/date';
+	import Date from '../../components/date.svelte';
 
 	export let posts;
 </script>
@@ -35,16 +34,10 @@ web."
 <ul class="post-list">
 	{#each posts as post}
 		<li class="h-entry">
-			<h2 class="title p-name">
-				<a class="link u-url" href={`/blog/${post.slug}`}>{post.title}</a>
+			<h2 class="post-title p-name">
+				<a class="post-link u-url" href={`/blog/${post.slug}`}>{post.title}</a>
 			</h2>
-			<div class="date">
-				<Calendar class="calendar" />
-				<span
-					>Publié le <time datetime={post.date} class="dt-published">{formatDate(post.date)}</time
-					></span
-				>
-			</div>
+			<Date date={post.date} />
 		</li>
 	{/each}
 </ul>
@@ -55,12 +48,12 @@ web."
 		flex-direction: column;
 		gap: toRem(48);
 
-		.title {
+		.post-title {
 			margin-bottom: toRem(8);
 			max-width: toRem(700);
 		}
 
-		.link {
+		.post-link {
 			border-radius: toRem(4);
 			transition: color 0.2s ease;
 
@@ -68,18 +61,6 @@ web."
 				color: var(--c-lightgray);
 				text-decoration: underline;
 			}
-		}
-
-		.date {
-			display: flex;
-			align-items: center;
-			gap: toRem(8);
-			font-size: toRem(16);
-		}
-
-		:global(.calendar) {
-			height: toRem(20);
-			width: toRem(20);
 		}
 	}
 </style>
