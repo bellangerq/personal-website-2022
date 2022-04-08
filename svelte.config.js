@@ -1,6 +1,7 @@
 import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-netlify';
 import sveltePreprocess from 'svelte-preprocess';
+import remarkUnwrapImages from 'remark-unwrap-images';
 
 const sassGlobalData = `
   @import "src/assets/style/_variables.scss";
@@ -16,7 +17,9 @@ const config = {
 	extensions: ['.svelte', '.svx', '.md'],
 	preprocess: [
 		mdsvex({
-			extensions: ['.svx', '.md']
+			extensions: ['.svx', '.md'],
+			layout: './src/components/mdsvex/layout.svelte',
+			remarkPlugins: [remarkUnwrapImages]
 		}),
 		sveltePreprocess({
 			scss: {
