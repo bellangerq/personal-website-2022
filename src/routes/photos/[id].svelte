@@ -19,7 +19,6 @@
 </script>
 
 <script>
-	import Calendar from '../../assets/icons/calendar.svelte';
 	import PageHead from '../../components/page-head.svelte';
 	import { formatDate } from '$lib/date';
 

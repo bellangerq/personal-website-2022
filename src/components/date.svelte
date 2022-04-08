@@ -3,7 +3,7 @@
 	import Calendar from '../assets/icons/calendar.svelte';
 
 	export let date;
-	export let isFeminine;
+	export let isFeminine = false;
 </script>
 
 <div class="date">
