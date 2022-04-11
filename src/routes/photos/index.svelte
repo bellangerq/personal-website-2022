@@ -64,6 +64,7 @@
 		height: 100%;
 		width: 100%;
 		margin-bottom: toRem(8);
+		object-fit: cover;
 		transition: opacity 0.2s ease;
 
 		&:hover {

@@ -8,10 +8,10 @@
 
 <div class="date">
 	<Calendar class="calendar" />
-	<span
-		>Publié{#if isFeminine}e{/if} le
-		<time datetime={date} class="dt-published">{formatDate(date)}</time></span
-	>
+	<span>
+		{isFeminine ? 'Publiée' : 'Publié'} le
+		<time datetime={date} class="dt-published">{formatDate(date)}</time>
+	</span>
 </div>
 
 <style lang="scss">
