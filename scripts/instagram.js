@@ -2,17 +2,13 @@
  * The goal of this script is to move all my Instagram
  * content to my site from the exported data. #OwnYourContent
  * TODO:
- * 	- Filter photos
- * 	- Run script on sample
- * 	- Run final script
  * 	- Clean and push on GitHub
  * 	- Plug to Twitter
  */
 import fs from 'fs';
 
 const raw = fs.readFileSync('./instagram_data/posts_1.json');
-// const photos = JSON.parse(raw);
-const photos = JSON.parse(raw).slice(300, 310);
+const photos = JSON.parse(raw);
 
 function run() {
 	photos.forEach((photo) => {
