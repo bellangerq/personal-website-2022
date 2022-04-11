@@ -17,8 +17,8 @@ This behavior is managed by browsers and therefore is different in every browser
 
 Back to our subject, there are two ways to create semantic quotes on the internet. Back to our subject, there are two ways to create semantic quotes on the internet. Let's consider [this Codepen](https://codepen.io/bellangerq/pen/MXmGKw) I made with the two quoting strategies detailed below:
 
-<p data-height="600" data-theme-id="0" data-slug-hash="MXmGKw" data-default-tab="result" data-user="bellangerq" data-embed-version="2" data-pen-title="Quote" class="codepen">See the Pen <a href="https://codepen.io/bellangerq/pen/MXmGKw/">Quote</a> by Quentin Bellanger (<a href="https://codepen.io/bellangerq">@bellangerq</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<!-- <p data-height="600" data-theme-id="0" data-slug-hash="MXmGKw" data-default-tab="result" data-user="bellangerq" data-embed-version="2" data-pen-title="Quote" class="codepen">See the Pen <a href="https://codepen.io/bellangerq/pen/MXmGKw/">Quote</a> by Quentin Bellanger (<a href="https://codepen.io/bellangerq">@bellangerq</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script> -->
 
 ### The `<blockquote>` tag
 

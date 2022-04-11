@@ -8,8 +8,6 @@
 	}
 
 	export let webmentions;
-
-	console.log(webmentions);
 </script>
 
 <details on:toggle={toggle} open={isOpen} class="webmentions">
