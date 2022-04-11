@@ -34,16 +34,12 @@ Every push on `main` branch will trigger a deploy on Netlify.
 
 ## To do
 
-### Tweet blog posts
-
-When a new blog post is added, tweet it.
+- Add a `syndicate` property on content to tweet it or not.
+- Resize photos with [Netlify Large Media](https://docs.netlify.com/large-media/overview/).
+- Handle above the fold photos and `loading="lazy"` attribute.
+- Connect Netlify CMS to publish content.
 
 ### Syndicate notes on Twitter
 
 1. Create a notes collection (`/notes` and `/notes/:slug`).
 2. On every push, if a new note is added and set as `syndicate: true`, create a new tweet with a Netlify function containing note content and note URL.
-
-### Upload Instagram content
-
-1. Create a photos collection (`/photos` and `/photos/:slug`).
-2. On every push, if a new photo is added and set as `syndicate: true`, create a new tweet with a Netlify function containing the photo image and URL.
