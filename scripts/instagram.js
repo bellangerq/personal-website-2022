@@ -2,7 +2,6 @@
  * The goal of this script is to move all my Instagram
  * content to my site from the exported data. #OwnYourContent
  * TODO:
- * 	- Clean and push on GitHub
  * 	- Plug to Twitter
  */
 import fs from 'fs';
