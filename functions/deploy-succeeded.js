@@ -33,6 +33,9 @@ async function getLatestResource() {
  * @param {object} post
  */
 async function handleResource(resource) {
+	if (!resource) {
+		return statusCode(400, '⚠️ Nothing to tweet.');
+	}
 	const searchRequest = `from:${TWITTER_HANDLE}"${buildResourceUrl(resource)}"`;
 	const res = await client.v2.search(searchRequest);
 
