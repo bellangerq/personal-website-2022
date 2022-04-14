@@ -3,6 +3,7 @@ title: 'Playing with the Constraint Validation API'
 description: 'Discovering the native HTML5 validation API to handle form validation. Is it really reliable?'
 date: 2020-07-08
 lang: 'en'
+syndicate: false
 ---
 
 I'm a huge advocate of using the native features of <abbr title="Hypertext Markup Language 5">HTML5</abbr>. A lot of people don't know what this language is really capable of. Amongs all of these features, there are a lot of built-in <abbr title="Application Programming Interface">API</abbr> like the [**Constraint Validation API**](https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation).

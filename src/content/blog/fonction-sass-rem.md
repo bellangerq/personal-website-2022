@@ -3,6 +3,7 @@ title: 'Convertir des pixels en rem avec une fonction Sass'
 description: "Une courte fonction Sass utilitaire pour convertir des pixels en rem et faciliter l'utilisation d'unités relatives."
 date: 2022-03-11
 lang: 'fr'
+syndicate: false
 ---
 
 Il n'y a plus vraiment de débat quant à l'utilisation d'unités relatives en CSS (par rapport au pixel). Mais c'est souvent pénible de passer du pixel au `rem` manuellement puisqu'il faut diviser la valeur par 16 (selon la taille de police par défaut) et se souvenir des correspondances de valeurs abstraites comme `3.375rem`.

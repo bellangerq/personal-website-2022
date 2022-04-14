@@ -3,6 +3,7 @@ title: 'Giving elements accessible names'
 description: 'A simple guide about using basic ARIA attributes to label interactive elements on a webpage for assistive technology.'
 date: 2019-04-23
 lang: 'en'
+syndicate: false
 ---
 
 I talked in my previous post about how I [introduced accessibility to my colleagues](https://quentin-bellanger.com/introducing-accessibility). I also gave a list of small tips to get started with <abbr title="Accessibility">a11y</abbr> (accessibility) and one of those was about labelling things. Let's dive deeper into this!

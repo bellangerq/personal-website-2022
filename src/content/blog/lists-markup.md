@@ -3,6 +3,7 @@ title: 'How to markup lists'
 description: 'Lists'
 date: 2020-06-16
 lang: 'en'
+syndicate: false
 ---
 
 As shortly [defined on Wikipedia](https://en.wikipedia.org/wiki/List):

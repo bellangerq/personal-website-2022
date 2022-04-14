@@ -3,6 +3,7 @@ title: 'Accessibility of cookies banners'
 description: 'Anatomy of an accessible and inclusive cookies banner.'
 date: 2020-04-04
 lang: 'en'
+syndicate: false
 ---
 
 As we see a cookies banner on every website today, it's really important to make sure it is accessible and that everyone can have access to its content.

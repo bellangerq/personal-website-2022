@@ -3,6 +3,7 @@ title: 'Building your personal website: a complete guide for junior developers'
 description: 'From goal setting to publishing: everything you need to know to ship your first project.'
 date: 2017-05-26
 lang: 'en'
+syndicate: false
 ---
 
 ## Why do I need a website?

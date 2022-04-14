@@ -3,6 +3,7 @@ title: 'Generate anchor links with Markdown content'
 description: 'An easy helper function to programmatically generate anchor links on page headings. Useful for JAMstack with static Markdown.'
 date: 2019-04-30
 lang: 'en'
+syndicate: false
 ---
 
 One of the oldest feature of the web are links. They allow you to navigate through pages of the web. But some of them let you jump through different section of a website: they are anchor links. They are built the same way except that their `href` attribute ends with a hash symbol followed by a string (e.g. #some-anchor) and must match with the corresponding section's `id` they jump to. You can read more [about how anchor links work here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a).

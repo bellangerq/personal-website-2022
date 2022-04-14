@@ -3,6 +3,7 @@ title: "À l'écoute des media queries"
 description: "Comment écouter les changements de la valeur d'une media query en JavaScript"
 date: 2022-03-24
 lang: 'fr'
+syndicate: false
 ---
 
 En intégrant le changement de thème visuel (via le petit bouton en début de page), j'ai découvert qu'il était possible d'**écouter les changements de valeur des media query**.

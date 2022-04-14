@@ -3,6 +3,7 @@ title: 'Feedbacks on introducing accessibility to my teammates'
 description: "I'm sharing my process and struggles I encountered on introducing accessibility to my dev team. There are also easy tips to get started."
 date: 2019-04-08
 lang: 'en'
+syndicate: false
 ---
 
 Accessibility isn't an easy task to setup within a team. In fact it even doesn't only rely on the development team but also on the design one. It's a general mindset to adopt in a company.

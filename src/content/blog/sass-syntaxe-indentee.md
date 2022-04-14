@@ -3,6 +3,7 @@ title: 'Arrêtons avec la syntaxe indentée de Sass'
 description: "Quelques éléments de réponse sur la syntaxe indentée de Sass qui pose plus de problèmes qu'elle n'en résout"
 date: 2022-03-16
 lang: 'fr'
+syndicate: false
 ---
 
 Dans beaucoup de projets front j'utilise [Sass](https://sass-lang.com/) pour le style qui est un langage que j'affectionne particulièrement. Mais récemment dans un projet j'ai eu à utiliser [la syntaxe indentée `.sass`](https://sass-lang.com/documentation/syntax#the-indented-syntax) (par opposition avec la syntaxe SCSS), qui est horrible.

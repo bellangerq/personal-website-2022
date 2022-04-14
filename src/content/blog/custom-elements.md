@@ -3,6 +3,7 @@ title: 'Creating a first ready-to-use custom element'
 description: "A short introduction to custom elements to show how it's possible to build a simple and reusable component in a Vanilla JS environment."
 date: 2019-03-19
 lang: 'en'
+syndicate: false
 ---
 
 The idea of this post, in addition to learn something new, is to be a quick introduction to custom elements for people who have never tried it and to show how to create a custom element really easily without diving deep into more advanced notions.

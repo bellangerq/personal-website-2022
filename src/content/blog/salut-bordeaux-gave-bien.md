@@ -3,6 +3,7 @@ title: "Salut Bordeaux, c'était gavé* bien."
 description: "Je quitte Bordeaux après 6 ans. J'ai beaucoup grandi et rencontré des personnes formidables. La suite se déroule à Tours."
 date: 2021-12-15
 lang: 'fr'
+syndicate: false
 ---
 
 _Short summary in English: I'm leaving Bordeaux after 6 years. It was a wonderful journey and I'm thankful for all the people I met there. The next chapter will take place in Tours._
