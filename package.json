@@ -26,6 +26,6 @@
 	"dependencies": {
 		"node-fetch": "^3.2.3",
 		"remark-unwrap-images": "^3.0.1",
-		"twitter-api-v2": "^1.11.2"
+		"twitter-api-v2": "1.12.0"
 	}
 }
