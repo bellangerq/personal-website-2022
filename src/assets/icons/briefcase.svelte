@@ -13,6 +13,8 @@
 	stroke-width="2"
 	stroke-linecap="round"
 	stroke-linejoin="round"
+	width="24"
+	height="24"
 >
 	<defs>
 		<linearGradient id="icon-gradient" gradientTransform="rotate(10)">
