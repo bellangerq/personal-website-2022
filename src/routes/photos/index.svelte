@@ -10,9 +10,29 @@
 </script>
 
 <script>
+	import { onMount } from 'svelte';
+
 	import PageHead from '../../components/page-head.svelte';
 	import Date from '../../components/date.svelte';
 	import { formatDate } from '$lib/date';
+
+	function handleIntersect(entries, observer) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.removeAttribute('loading');
+			}
+			observer.unobserve(entry.target);
+		});
+	}
+
+	onMount(() => {
+		const images = document.querySelectorAll('.photo-img');
+		const observer = new IntersectionObserver(handleIntersect);
+
+		images.forEach((el) => {
+			observer.observe(el);
+		});
+	});
 
 	export let photos;
 </script>
