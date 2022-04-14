@@ -13,7 +13,8 @@ export async function fetchPosts() {
 		slug: post.slug,
 		title: post.title,
 		description: post.description,
-		date: post.date
+		date: post.date,
+		syndicate: post.syndicate
 	}));
 
 	return {

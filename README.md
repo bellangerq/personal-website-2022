@@ -34,7 +34,7 @@ Every push on `main` branch will trigger a deploy on Netlify.
 
 ## To do
 
-- Add a `syndicate` property on content to tweet it or not.
+- Create a generator for content (post and photo)
 - Resize photos with [Netlify Large Media](https://docs.netlify.com/large-media/overview/) or [Cloudinary](https://github.com/cloudinary/cloudinary-svelte). Width = 300px on `/photos/`.
 - Handle above the fold photos and `loading="lazy"` attribute.
 - Syndicate notes (`/notes` and `/notes/[id]`).
