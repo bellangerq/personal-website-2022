@@ -39,7 +39,7 @@
 					loading="lazy"
 					class="photo-img"
 					src={`/photos/${photo.slug}.jpg`}
-					alt=""
+					alt={photo.alt}
 				/>
 			</a>
 			<Date date={photo.date} isFeminine />

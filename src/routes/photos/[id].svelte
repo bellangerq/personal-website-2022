@@ -6,7 +6,7 @@
 			return {
 				props: {
 					photoContent: photo.default,
-					meta: { ...photo.metadata }
+					meta: { ...photo.metadata, slug: params.id }
 				}
 			};
 		} catch (error) {
@@ -25,7 +25,7 @@
 	export let photoContent;
 	export let meta;
 
-	const { date } = meta;
+	const { date, slug, alt } = meta;
 </script>
 
 <PageHead title="Photo du {formatDate(date)} - Quentin Bellanger" />
@@ -36,6 +36,8 @@
 	<div class="markdown-content">
 		<svelte:component this={photoContent} />
 	</div>
+
+	<img src={`/photos/${slug}.jpg`} {alt} />
 </article>
 
 <style lang="scss">
