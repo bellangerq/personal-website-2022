@@ -1,7 +1,7 @@
 ---
 title: 'Adieu Instagram'
 description: "J'ai enfin supprimé mon compte Instagram et rappatrié tout le contenu sur mon site personnel."
-date: 2022-04-18
+date: 2022-04-16
 lang: 'fr'
 syndicate: true
 ---
