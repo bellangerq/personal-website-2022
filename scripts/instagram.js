@@ -1,8 +1,6 @@
 /**
  * The goal of this script is to move all my Instagram
  * content to my site from the exported data. #OwnYourContent
- * TODO:
- * 	- Plug to Twitter
  */
 import fs from 'fs';
 
@@ -65,7 +63,10 @@ function generatePhotoSlug(timestamp, dateOnly = false) {
 	return dateOnly ? `${y}-${m}-${d}` : `${y}-${m}-${d}-${timestamp}`;
 }
 
-// Taken from: https://stackoverflow.com/a/68237082
+/**
+ * Convert unicode characters in string
+ * Source: https://stackoverflow.com/a/68237082
+ */
 function unicodeToChar(s) {
 	let d = new TextDecoder();
 	let a = s.split('').map((r) => r.charCodeAt());
