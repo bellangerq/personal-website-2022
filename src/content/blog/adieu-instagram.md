@@ -10,7 +10,7 @@ Dans la mouvance du [POSSE (Publish on your Own Site, Syndicate Elsewhere)](http
 
 ## Récupérer le contenu
 
-Je m'attendais à ce que ce soit plus compliqué que ça, mais il suffit d'aller dans les paramètres de son compte, de demander ses données et de confirmer sa demande par mail. Puis on peut télécharger un gros fichier `.zip` avec tout son contenu (posts, stories, commentaires, likes...). Contenu que j'ai ensuite filtré pour ne garder uniquement les photos publiées et un énorme fichier JSON avec le contenu des publications.
+Je m'attendais à ce que ce soit plus compliqué que ça, mais il suffit d'aller dans les paramètres de son compte, de demander ses données et de confirmer sa demande par mail. Puis on peut télécharger un gros fichier `.zip` avec tout son contenu (posts, stories, commentaires, likes...). Contenu que j'ai ensuite filtré pour ne garder uniquement les photos publiées et un énorme fichier JSON avec le contenu (description, date, image associée...) des publications.
 
 ```
 /instagram_data
@@ -26,7 +26,7 @@ Je m'attendais à ce que ce soit plus compliqué que ça, mais il suffit d'aller
 L'objectif était ensuite, via un script, de lire et de parcourir ce fichier JSON et pour chaque photo :
 
 1. Vérifier la présence du fichier `.jpg` correspondant à la publication et lui associer un slug : `{yyyy}-{mm}-{dd}-{timestamp}`.
-2. Avec ce slug, créer un fichier Markdown comportant les métadata de la publication (date, langue, text alternatif) et le contenu.
+2. Avec ce slug, créer un fichier Markdown comportant les métadata de la publication (date, langue, text alternatif) et la description.
 3. Déplacer et renommer le fichier `.jpg` de la publication dans le bon dossier, avec le même slug que le fichier Markdown.
 
 ## Résultat
