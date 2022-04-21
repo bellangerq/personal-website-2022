@@ -34,6 +34,7 @@ Every push on `main` branch will trigger a deploy on Netlify.
 
 ## To do
 
+- Font size scale (with clamp + `vw`)
 - Connect Netlify CMS to publish content.
 - Resize photos with [Netlify Large Media](https://docs.netlify.com/large-media/overview/) or [Cloudinary](https://github.com/cloudinary/cloudinary-svelte). Width = 300px on `/photos/`.
 - Syndicate notes (`/notes` and `/notes/[id]`) ?
