@@ -1,0 +1,55 @@
+body {
+	line-height: 1.5;
+	@include typeScale(toRem(16), toRem(14), toRem(24), 0.8);
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.2;
+}
+
+h1 {
+	font-weight: 900;
+	background: linear-gradient(
+		var(--gradient-angle),
+		var(--c-gradient-start),
+		var(--c-gradient-end)
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	display: inline-block;
+	margin-bottom: toRem(32);
+
+	@include typeScale(toRem(40), toRem(20), toRem(72), 5);
+}
+
+h2 {
+	@include typeScale(toRem(28), toRem(20), toRem(40), 3);
+}
+
+h3 {
+	font-weight: 400;
+	@include typeScale(toRem(24), toRem(20), toRem(32), 2);
+}
+
+p.intro {
+	max-width: toRem(800);
+	margin-bottom: toRem(144);
+	font-weight: 600;
+	@include typeScale(toRem(20), toRem(16), toRem(28), 1);
+
+	@include small {
+		margin-bottom: toRem(32);
+	}
+
+	a {
+		text-decoration: underline;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: var(--c-lightgray);
+		}
+	}
+}

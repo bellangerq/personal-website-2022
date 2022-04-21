@@ -8,6 +8,10 @@
 	@return math.div($px, 16) + rem;
 }
 
+@mixin typeScale($min, $base, $max, $scale: 0.8) {
+	font-size: clamp($min, $base + $scale * 1vw, $max);
+}
+
 @mixin focus {
 	&:focus {
 		@content;

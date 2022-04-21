@@ -2,6 +2,7 @@
 
 @import './_reset.scss';
 @import './_variables.scss';
+@import './_typography.scss';
 @import './_functions.scss';
 @import './_print.scss';
 @import './_prism.scss';
@@ -21,8 +22,6 @@ body {
 	max-width: toRem(1200);
 	margin: 0 auto;
 	padding: toRem(16);
-	font-size: toRem(20);
-	line-height: 1.5;
 	transition: background 0.2s ease;
 }
 
@@ -47,62 +46,13 @@ body {
 	}
 }
 
-a {
-	scroll-margin: toRem(24) 0;
-}
-
-h1 {
-	font-size: toRem(72);
-	font-weight: 900;
-	line-height: 1.2;
-	background: linear-gradient(
-		var(--gradient-angle),
-		var(--c-gradient-start),
-		var(--c-gradient-end)
-	);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	display: inline-block;
-	margin-bottom: toRem(32);
-
-	@include small {
-		font-size: toRem(40);
-	}
-}
-
-h2 {
-	font-size: toRem(32);
-	line-height: 1.2;
-}
-
-p.intro {
-	max-width: toRem(800);
-	margin-bottom: toRem(144);
-	font-size: toRem(24);
-	font-weight: 600;
-
-	@include small {
-		font-size: toRem(20);
-		margin-bottom: toRem(32);
-	}
-
-	a {
-		text-decoration: underline;
-		transition: color 0.2s ease;
-
-		&:hover {
-			color: var(--c-lightgray);
-		}
-	}
-}
-
 a,
 button,
 summary {
 	color: currentColor;
 	text-decoration: none;
 	cursor: pointer;
+	scroll-margin: toRem(24) 0;
 
 	@include focus {
 		outline: toRem(3) solid var(--c-gradient-end);
