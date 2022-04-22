@@ -44,7 +44,7 @@ Nous sommes des humains. Échanger reste le meilleur moyen pour transmettre une 
 
 Pour donner des indications sur un design, de simples commentaires ou schémas suffisent : "_Ici, quand la fenêtre devient plus petite, les images passent à la ligne_" ou "_Cette section passe sous le formulaire_". Côté design, on s'épargne une version de plus à designer et côté développement, on est moins contraint et on sait tout de suite comment doit réagir l'interface. Tout le monde est gagnant.
 
-### Adopter le CSS moderne
+### Profiter du CSS moderne
 
 Enfin côté développement front-end, il faut pouvoir profiter du CSS moderne pour intégrer en se passant un maximum des media queries. D'abord parce qu'on gagne en maintenance et en lisibilité, pas besoin de se soucier des changements de taille. Mais surtout parce que ça signifie que peu importe la taille d'écran, le site s'adaptera quoi qu'il arrive.
 
@@ -56,7 +56,7 @@ h1 {
 }
 ```
 
-Un autre exemple : pouvoir créer une grille avec CSS grid qui bascule sur plusieurs lignes automatiquement. [Every Layout](https://every-layout.dev/) est une excellente ressource avec beaucoup d'interface responsive utilisant du CSS moderne.
+Un autre exemple : pouvoir créer une grille avec CSS grid qui bascule sur plusieurs lignes automatiquement. [Every Layout](https://every-layout.dev/) est une excellente ressource avec beaucoup d'interfaces responsive utilisant du CSS moderne.
 
 ```css
 .grid {
