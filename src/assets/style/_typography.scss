@@ -1,6 +1,6 @@
 body {
 	line-height: 1.5;
-	@include typeScale(toRem(16), toRem(14), toRem(24), 0.8);
+	font-size: var(--t-m);
 }
 
 h1,
@@ -10,6 +10,7 @@ h3 {
 }
 
 h1 {
+	font-size: var(--t-xxxl);
 	font-weight: 900;
 	background: linear-gradient(
 		var(--gradient-angle),
@@ -21,24 +22,22 @@ h1 {
 	-webkit-text-fill-color: transparent;
 	display: inline-block;
 	margin-bottom: toRem(32);
-
-	@include typeScale(toRem(40), toRem(20), toRem(72), 5);
 }
 
 h2 {
-	@include typeScale(toRem(28), toRem(20), toRem(40), 3);
+	font-size: var(--t-xxl);
 }
 
 h3 {
 	font-weight: 400;
-	@include typeScale(toRem(24), toRem(20), toRem(32), 2);
+	font-size: var(--t-xl);
 }
 
 p.intro {
 	max-width: toRem(800);
 	margin-bottom: toRem(144);
 	font-weight: 600;
-	@include typeScale(toRem(20), toRem(16), toRem(28), 1);
+	font-size: var(--t-l);
 
 	@include small {
 		margin-bottom: toRem(32);

@@ -1,10 +1,12 @@
 <script>
+	import { onMount } from 'svelte';
+
 	import Download from '../assets/icons/download.svelte';
 	import Bookmark from '../assets/icons/bookmark.svelte';
 	import Briefcase from '../assets/icons/briefcase.svelte';
 	import PageHead from '../components/page-head.svelte';
 	import Experience from '../components/experience.svelte';
-	import { onMount } from 'svelte';
+	import '../assets/style/_print.scss';
 
 	function print() {
 		window.print();
@@ -166,7 +168,7 @@
 		align-items: center;
 		padding: toRem(4) toRem(8);
 		margin-top: toRem(16);
-		font-size: toRem(16);
+		font-size: var(--t-s);
 		gap: toRem(8);
 		cursor: pointer;
 		text-decoration: none;
