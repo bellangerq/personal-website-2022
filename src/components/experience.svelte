@@ -36,7 +36,7 @@
 
 	.period {
 		color: var(--c-lightgray);
-		font-size: toRem(16);
+		font-size: var(--t-s);
 		margin-bottom: toRem(8);
 	}
 
@@ -59,13 +59,13 @@
 		);
 		color: var(--c-background);
 		border-radius: toRem(8);
-		font-size: toRem(14);
+		font-size: var(--t-xs);
 		font-weight: 600;
 		padding: toRem(2) toRem(8);
 	}
 
 	.link {
-		font-size: toRem(16);
+		font-size: var(--t-s);
 		text-decoration: underline;
 		transition: color 0.2s ease;
 

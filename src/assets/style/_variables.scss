@@ -1,6 +1,53 @@
+@use 'sass:map';
+
 @import './functions';
 
 $br-small: toRem(600);
+
+$type-scale: (
+	xxxl: (
+		min: toRem(40),
+		base: toRem(20),
+		max: toRem(72),
+		scale: 5
+	),
+	xxl: (
+		min: toRem(28),
+		base: toRem(20),
+		max: toRem(40),
+		scale: 3
+	),
+	xl: (
+		min: toRem(24),
+		base: toRem(20),
+		max: toRem(32),
+		scale: 2
+	),
+	l: (
+		min: toRem(20),
+		base: toRem(16),
+		max: toRem(28),
+		scale: 1
+	),
+	m: (
+		min: toRem(16),
+		base: toRem(14),
+		max: toRem(20),
+		scale: 0.8
+	),
+	s: (
+		min: toRem(14),
+		base: toRem(12),
+		max: toRem(16),
+		scale: 0.8
+	),
+	xs: (
+		min: toRem(12),
+		base: toRem(10),
+		max: toRem(14),
+		scale: 0.9
+	)
+);
 
 :global {
 	html {
@@ -9,6 +56,14 @@ $br-small: toRem(600);
 		--c-lightgray: #4a4a4a;
 		--c-gradient-start: #1b1b9b;
 		--c-gradient-end: #10704d;
+
+		@each $name, $size in $type-scale {
+			--t-#{$name}: clamp(
+				#{map.get($size, 'min')},
+				#{map.get($size, 'base')} + #{map.get($size, 'scale')} * 1vw,
+				#{map.get($size, 'max')}
+			);
+		}
 
 		--gradient-angle: 60deg;
 

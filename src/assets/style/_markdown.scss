@@ -32,7 +32,7 @@
 
 .markdown-content li::marker {
 	color: var(--c-gradient-start);
-	font-size: toRem(16);
+	font-size: 0.8em;
 }
 
 .markdown-content li:nth-child(odd)::marker {
@@ -77,13 +77,12 @@
 	border: toRem(1) solid var(--c-lightgray);
 	border-radius: toRem(4);
 	color: var(--c-lightgray);
-	font-size: toRem(16);
+	font-size: 0.8em;
 	padding: toRem(2) toRem(2);
 }
 
 .markdown-content pre {
 	border: toRem(2) solid var(--c-lightgray);
-	font-size: toRem(16);
 	border-radius: toRem(4);
 	overflow: auto;
 	padding: toRem(8);

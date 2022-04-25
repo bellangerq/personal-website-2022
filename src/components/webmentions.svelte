@@ -66,7 +66,7 @@
 
 	.item::marker {
 		color: var(--c-gradient-start);
-		font-size: toRem(16);
+		font-size: 0.8em;
 	}
 
 	.item:nth-child(odd)::marker {

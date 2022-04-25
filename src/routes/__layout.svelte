@@ -57,7 +57,7 @@
 	.skip {
 		background: var(--c-background);
 		color: var(--c-content);
-		font-size: toRem(16);
+		font-size: var(--t-s);
 		font-weight: 600;
 		border: toRem(2) solid;
 		border-radius: toRem(4);
@@ -90,7 +90,7 @@
 
 	.item {
 		border-radius: toRem(2);
-		font-size: toRem(16);
+		font-size: var(--t-s);
 		font-weight: 600;
 		position: relative;
 		padding-bottom: toRem(4);
@@ -122,7 +122,7 @@
 		color: var(--c-lightgray);
 		padding: toRem(16) 0;
 		margin: toRem(64) auto 0;
-		font-size: toRem(14);
+		font-size: var(--t-xs);
 
 		p + p {
 			margin-top: toRem(4);

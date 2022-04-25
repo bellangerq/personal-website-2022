@@ -93,7 +93,7 @@
 
 		p {
 			color: var(--c-lightgray);
-			font-size: toRem(16);
+			font-size: var(--t-s);
 		}
 
 		a {

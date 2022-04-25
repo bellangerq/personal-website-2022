@@ -19,7 +19,7 @@
 		display: flex;
 		align-items: center;
 		gap: toRem(8);
-		font-size: toRem(16);
+		font-size: var(--t-s);
 	}
 
 	:global(.calendar) {
