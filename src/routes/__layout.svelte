@@ -41,7 +41,8 @@
 
 <footer class="footer">
 	<p>
-		Ailleurs sur le web : <a href="https://twitter.com/bellanger_q" rel="me">Twitter</a> et
+		Ailleurs sur le web : <a href="https://twitter.com/bellanger_q" rel="me">Twitter</a>,
+		<a href="https://toot.aquilenet.fr/@bellangerq" rel="me">Mastodon</a> et
 		<a href="https://github.com/bellangerq" rel="me">GitHub</a>.
 	</p>
 	<p>
