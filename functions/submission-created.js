@@ -44,10 +44,23 @@ exports.handler = async (event, context) => {
 
 	// Extract form data
 	const data = JSON.parse(event.body);
-	const { lang, alt, syndicate, description } = data.payload.data;
+	let lang = 'fr';
+	let alt = 'pouet';
+	let syndicate = 'true';
+	let description = 'Une description chouette.';
+	let date = new Date('2022-04-29T19:04:20.113Z');
+	let imageUrl =
+		'https://d33wubrfki0l68.cloudfront.net/69780775-db5b-4ed9-b887-73492899468a/%5Bremoval.ai%5D_tmp-62665971c1bee.png';
 
-	const date = new Date(data.payload.created_at);
-	// const date = new Date('2022-04-29T19:04:20.113Z');
+	if (process.env.NODE_ENV === 'production') {
+		lang = data.payload.lang;
+		alt = data.payload.alt;
+		syndicate = data.payload.syndicate;
+		description = data.payload.description;
+		date = new Date(data.payload.created_at);
+		imageUrl = data.payload.data.image.url;
+	}
+
 	const formattedDate = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${(
 		'0' + date.getDate()
 	).slice(-2)}`;
@@ -57,7 +70,6 @@ exports.handler = async (event, context) => {
 	// Create Markdown file
 	const slug = `${formattedDate}-${timestamp}`;
 	const markdown = `---\nlang: ${lang}\ndate: ${date}\nsyndicate: ${alt}\nsyndicate: ${syndicate}\n---\n\n${description}`;
-	// const markdown = `---\nlang: ${'fr'}\ndate: ${formattedDate}\nalt: ${'pouet'}\nsyndicate: ${true}\n---\n\n${'frheh, rnrnreoneor eroeigoe'}`;
 
 	fs.writeFile(`src/content/photos/${slug}.md`, markdown, (error) => {
 		if (error) {
@@ -71,10 +83,10 @@ exports.handler = async (event, context) => {
 
 	try {
 		const file = fs.createWriteStream(`static/photos/${slug}.jpg`);
-		const url = data.payload.data.image.url;
+		// const url = data.payload.data.image.url;
 		// const url =
 		// 	'https://d33wubrfki0l68.cloudfront.net/69780775-db5b-4ed9-b887-73492899468a/%5Bremoval.ai%5D_tmp-62665971c1bee.png';
-		const response = await fetch(url);
+		const response = await fetch(imageUrl);
 		response.body.pipe(file);
 		console.log('Image file successfully created.');
 	} catch (error) {
