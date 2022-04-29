@@ -44,10 +44,10 @@ exports.handler = async (event, context) => {
 
 	// Extract form data
 	const data = JSON.parse(event.body);
-	const { lang, description, alt, syndicate } = data.payload.data;
+	const { lang, alt, syndicate, description } = data.payload.data;
 
-	const date = new Date(data.created_at);
-	// const date s= new Date('2022-04-29T19:04:20.113Z');
+	const date = new Date(data.payload.created_at);
+	// const date = new Date('2022-04-29T19:04:20.113Z');
 	const formattedDate = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${(
 		'0' + date.getDate()
 	).slice(-2)}`;
@@ -59,8 +59,8 @@ exports.handler = async (event, context) => {
 	const markdown = `---\nlang: ${lang}\ndate: ${date}\nsyndicate: ${alt}\nsyndicate: ${syndicate}\n---\n\n${description}`;
 	// const markdown = `---\nlang: ${'fr'}\ndate: ${formattedDate}\nalt: ${'pouet'}\nsyndicate: ${true}\n---\n\n${'frheh, rnrnreoneor eroeigoe'}`;
 
-	fs.writeFile(`src/content/photos/${slug}.md`, markdown, (err) => {
-		if (err) {
+	fs.writeFile(`src/content/photos/${slug}.md`, markdown, (error) => {
+		if (error) {
 			return {
 				statusCode: 400,
 				body: `❌ Error while creating Markdown file: "${error}"`
