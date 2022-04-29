@@ -82,12 +82,15 @@ exports.handler = async (event, context) => {
 	});
 
 	try {
-		const file = fs.createWriteStream(`static/photos/${slug}.jpg`);
-		// const url = data.payload.data.image.url;
-		// const url =
-		// 	'https://d33wubrfki0l68.cloudfront.net/69780775-db5b-4ed9-b887-73492899468a/%5Bremoval.ai%5D_tmp-62665971c1bee.png';
+		// const file = fs.createWriteStream(`static/photos/${slug}.jpg`);
 		const response = await fetch(imageUrl);
-		response.body.pipe(file);
+		const arrayBuffer = await response.arrayBuffer();
+		fs.writeFile(`static/photos/${slug}.jpg`, Buffer.from(arrayBuffer), (error) => {
+			if (error) {
+				console.log('writeFile error: ', error);
+			}
+		});
+		// response.body.pipe(file);
 		console.log('Image file successfully created.');
 	} catch (error) {
 		return {
