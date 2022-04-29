@@ -1,6 +1,6 @@
 <h1>Créer une nouvelle photo</h1>
 
-<form name="photo" enctype="multipart-form/data" netlify>
+<form name="photo" method="post" enctype="multipart-form/data" netlify>
 	<label for="alt" name="alt">Text alternatif</label>
 	<input style="background: lightgray; color: black;" type="text" id="alt" />
 
