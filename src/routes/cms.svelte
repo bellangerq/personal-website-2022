@@ -1,6 +1,10 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <h1>Créer une nouvelle photo</h1>
 
-<form name="photo" method="post" enctype="multipart-form/data" data-netlify="true">
+<form name="photo" method="post" enctype="multipart-form/data" netlify>
 	<input type="hidden" name="form-name" value="photo" />
 
 	<label for="alt" name="alt">Text alternatif</label>
