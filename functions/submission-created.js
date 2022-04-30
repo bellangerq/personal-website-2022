@@ -1,42 +1,95 @@
 import fs from 'fs';
 import fetch from 'node-fetch';
-// const body = {
-// 	payload: {
-// 		number: 3,
-// 		title: '2 un paquet de chips poulet braisé',
-// 		email: null,
-// 		name: null,
-// 		first_name: null,
-// 		last_name: null,
-// 		company: null,
-// 		summary: '\\u003cstrong\\u003e2 un paquet de chips poulet braisé\\u003c/strong\\u003e ',
-// 		body: null,
-// 		data: {
-// 			alt: '2 un paquet de chips poulet braisé',
-// 			image: null,
-// 			ip: '2001:861:41c2:7620:8086:16da:7f2a:65c2',
-// 			user_agent:
-// 				'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:99.0) Gecko/20100101 Firefox/99.0',
-// 			referrer: 'https://deploy-preview-4--quentin-bellanger.netlify.app/cms/'
-// 		},
-// 		created_at: '2022-04-29T19:04:20.113Z',
-// 		human_fields: { 'Text alternatif': '2 un paquet de chips poulet braisé', Image: '' },
-// 		ordered_human_fields: [
-// 			{ title: 'Text alternatif', name: 'alt', value: '2 un paquet de chips poulet braisé' },
-// 			{ title: 'Image', name: 'image', value: '' }
-// 		],
-// 		id: '626c36b4c652e10059581d19',
-// 		form_id: '626c34a97d3457000814b036',
-// 		site_url: 'https://quentin-bellanger.com',
-// 		form_name: 'photo'
-// 	},
+import { Octokit } from '@octokit/rest';
+import { Base64 } from 'js-base64';
 
-// {
-//   filename: '[removal.ai]_tmp-62665971c1bee.png',
-//   type: 'file',
-//   size: 58350,
-//   url: 'https://d33wubrfki0l68.cloudfront.net/69780775-db5b-4ed9-b887-73492899468a/%5Bremoval.ai%5D_tmp-62665971c1bee.png'
-// }
+const octokit = new Octokit({
+	auth: process.env.GITHUB_ACCESS_TOKEN
+});
+const GITHUB_USERNAME = 'bellangerq';
+const GITHUB_REPOSITORY = 'personal-website-2022';
+const GITHUB_BRANCH = 'feat/netlify-cms-photos';
+
+async function pushPhotoToGit(slug, image, markdown) {
+	try {
+		// get latest commit from branch
+		const commits = await octokit.repos.listCommits({
+			owner: GITHUB_USERNAME,
+			repo: GITHUB_REPOSITORY,
+			per_page: 1,
+			sha: GITHUB_BRANCH
+		});
+
+		const latestCommitSHA = commits.data[0].sha;
+
+		console.log('[listCommits] OK');
+
+		console.log(image);
+
+		const {
+			data: { sha: imageSHA }
+		} = await octokit.rest.git.createBlob({
+			owner: GITHUB_USERNAME,
+			repo: GITHUB_REPOSITORY,
+			content: image,
+			encoding: 'base64'
+		});
+
+		console.log('[createBlob] OK');
+
+		// set files to add
+		const files = [
+			{
+				mode: '100644',
+				path: `src/content/photos/${slug}.md`,
+				content: markdown
+			},
+			{
+				mode: '100644',
+				path: `static/photos/${slug}.jpg`,
+				sha: imageSHA,
+				type: 'blob'
+			}
+		];
+
+		// create tree
+		const {
+			data: { sha: treeSHA }
+		} = await octokit.git.createTree({
+			owner: GITHUB_USERNAME,
+			repo: GITHUB_REPOSITORY,
+			tree: files,
+			base_tree: latestCommitSHA
+		});
+
+		console.log('[createTree] OK');
+
+		// create commit
+		const {
+			data: { sha: newCommitSHA }
+		} = await octokit.git.createCommit({
+			owner: GITHUB_USERNAME,
+			repo: GITHUB_REPOSITORY,
+			tree: treeSHA,
+			message: `Add new photo: ${slug}`,
+			parents: [latestCommitSHA]
+		});
+
+		console.log('[createCommit] OK');
+
+		// push content (git push)
+		const response = await octokit.git.updateRef({
+			owner: GITHUB_USERNAME,
+			repo: GITHUB_REPOSITORY,
+			ref: `heads/${GITHUB_BRANCH}`,
+			sha: newCommitSHA
+		});
+
+		console.log('[updateRef] OK');
+	} catch (error) {
+		throw new Error(error);
+	}
+}
 
 exports.handler = async (event, context) => {
 	console.log(event);
@@ -49,8 +102,7 @@ exports.handler = async (event, context) => {
 	let syndicate = 'true';
 	let description = 'Une description chouette.';
 	let date = new Date('2022-04-29T19:04:20.113Z');
-	let imageUrl =
-		'https://d33wubrfki0l68.cloudfront.net/69780775-db5b-4ed9-b887-73492899468a/%5Bremoval.ai%5D_tmp-62665971c1bee.png';
+	let imageUrl = 'https://quentin-bellanger.com/photos/2018-11-17-1542477368.jpg';
 
 	if (process.env.NODE_ENV === 'production') {
 		lang = data.payload.lang;
@@ -69,35 +121,67 @@ exports.handler = async (event, context) => {
 
 	// Create Markdown file
 	const slug = `${formattedDate}-${timestamp}`;
-	const markdown = `---\nlang: ${lang}\ndate: ${date}\nsyndicate: ${alt}\nsyndicate: ${syndicate}\n---\n\n${description}`;
+	const markdown = `---\nlang: ${lang}\ndate: ${formattedDate}\nalt: ${alt}\nsyndicate: ${syndicate}\n---\n\n${description}`;
 
-	fs.writeFile(`src/content/photos/${slug}.md`, markdown, (error) => {
-		if (error) {
-			return {
-				statusCode: 400,
-				body: `❌ Error while creating Markdown file: "${error}"`
-			};
-		}
-		console.log('Markdown file successfully created.');
-	});
+	// fs.writeFile(`src/content/photos/${slug}.md`, markdown, (error) => {
+	// 	if (error) {
+	// 		return {
+	// 			statusCode: 400,
+	// 			body: `❌ Error while creating Markdown file: "${error}"`
+	// 		};
+	// 	}
+	// 	console.log('Markdown file successfully created.');
+	// });
 
-	try {
-		// const file = fs.createWriteStream(`static/photos/${slug}.jpg`);
-		const response = await fetch(imageUrl);
-		const arrayBuffer = await response.arrayBuffer();
-		fs.writeFile(`static/photos/${slug}.jpg`, Buffer.from(arrayBuffer), (error) => {
-			if (error) {
-				console.log('writeFile error: ', error);
-			}
-		});
-		// response.body.pipe(file);
-		console.log('Image file successfully created.');
-	} catch (error) {
-		return {
-			statusCode: 400,
-			body: `❌ Error while creating image file: "${error}"`
-		};
-	}
+	// try {
+	// 	const response = await fetch(imageUrl);
+	// 	const arrayBuffer = await response.arrayBuffer();
+	// 	fs.writeFile(`static/photos/${slug}.jpg`, Buffer.from(arrayBuffer), (error) => {
+	// 		if (error) {
+	// 			console.log('writeFile error: ', error);
+	// 		}
+	// 	});
+	// 	console.log('Image file successfully created.');
+	// } catch (error) {
+	// 	return {
+	// 		statusCode: 400,
+	// 		body: `❌ Error while creating image file: "${error}"`
+	// 	};
+	// }
+
+	// try {
+	// 	await octokit.repos.createOrUpdateFileContents({
+	// 		owner: 'bellangerq',
+	// 		repo: 'personal-website-2022',
+	// 		path: 'src/content/photos/test.md',
+	// 		message: `(2) New photo: ${slug}`,
+	// 		branch: 'feat/netlify-cms-photos',
+	// 		content: Base64.encode('pouet pouet')
+	// 	});
+
+	// 	console.log('Successfully commited!');
+
+	// 	return {
+	// 		statusCode: 200,
+	// 		body: 'Successfully commited!'
+	// 	};
+	// } catch (error) {
+	// 	console.log('Error while committing: ', error);
+
+	// 	return {
+	// 		statusCode: 400,
+	// 		body: 'Error while commiting:' + error
+	// 	};
+	// }
+
+	const response = await fetch(imageUrl);
+	const arrayBuffer = await response.arrayBuffer();
+	const buffer = Buffer.from(arrayBuffer);
+	const image = buffer.toString('base64');
+
+	console.log(image);
+
+	await pushPhotoToGit(slug, image, markdown);
 
 	return {
 		statusCode: 200,
