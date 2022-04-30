@@ -133,14 +133,14 @@ exports.handler = async (event, context) => {
 	let date = new Date('2022-04-29T19:04:20.113Z');
 	let imageUrl = 'https://quentin-bellanger.com/photos/2018-11-17-1542477368.jpg';
 
-	if (process.env.NODE_ENV === 'production') {
-		lang = data.payload.lang;
-		alt = data.payload.alt;
-		syndicate = data.payload.syndicate;
-		description = data.payload.description;
-		date = new Date(data.payload.created_at);
-		imageUrl = data.payload.data.image.url;
-	}
+	// if (process.env.NODE_ENV === 'production') {
+	lang = data.payload.lang;
+	alt = data.payload.alt;
+	syndicate = data.payload.syndicate;
+	description = data.payload.description;
+	date = new Date(data.payload.created_at);
+	imageUrl = data.payload.data.image.url;
+	// }
 
 	const formattedDate = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${(
 		'0' + date.getDate()
