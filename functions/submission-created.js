@@ -1,7 +1,5 @@
-import fs from 'fs';
 import fetch from 'node-fetch';
 import { Octokit } from '@octokit/rest';
-import { Base64 } from 'js-base64';
 
 const octokit = new Octokit({
 	auth: process.env.GITHUB_ACCESS_TOKEN
@@ -9,6 +7,19 @@ const octokit = new Octokit({
 const GITHUB_USERNAME = 'bellangerq';
 const GITHUB_REPOSITORY = 'personal-website-2022';
 const GITHUB_BRANCH = 'feat/netlify-cms-photos';
+
+async function getImage(imageUrl) {
+	try {
+		const response = await fetch(imageUrl);
+		const arrayBuffer = await response.arrayBuffer();
+		const buffer = Buffer.from(arrayBuffer);
+		const image = buffer.toString('base64');
+
+		return image;
+	} catch (error) {
+		return statusCode(400, `❌ Error while fetching photo image: "${error}"`);
+	}
+}
 
 async function pushPhotoToGit(slug, image, markdown) {
 	try {
@@ -23,8 +34,6 @@ async function pushPhotoToGit(slug, image, markdown) {
 		const latestCommitSHA = commits.data[0].sha;
 
 		console.log('[listCommits] OK');
-
-		console.log(image);
 
 		const {
 			data: { sha: imageSHA }
@@ -86,9 +95,25 @@ async function pushPhotoToGit(slug, image, markdown) {
 		});
 
 		console.log('[updateRef] OK');
+		return statusCode(200, '✅ Photo has been successfully committed.');
 	} catch (error) {
-		throw new Error(error);
+		return statusCode(400, `❌ Error while committing photo: "${error}"`);
 	}
+}
+
+/**
+ * Log and return
+ * @param {number} code http status code
+ * @param {string} message
+ * @returns
+ */
+function statusCode(code, message) {
+	console.log(message);
+
+	return {
+		statusCode: code,
+		body: message
+	};
 }
 
 exports.handler = async (event, context) => {
@@ -123,70 +148,9 @@ exports.handler = async (event, context) => {
 	const slug = `${formattedDate}-${timestamp}`;
 	const markdown = `---\nlang: ${lang}\ndate: ${formattedDate}\nalt: ${alt}\nsyndicate: ${syndicate}\n---\n\n${description}`;
 
-	// fs.writeFile(`src/content/photos/${slug}.md`, markdown, (error) => {
-	// 	if (error) {
-	// 		return {
-	// 			statusCode: 400,
-	// 			body: `❌ Error while creating Markdown file: "${error}"`
-	// 		};
-	// 	}
-	// 	console.log('Markdown file successfully created.');
-	// });
-
-	// try {
-	// 	const response = await fetch(imageUrl);
-	// 	const arrayBuffer = await response.arrayBuffer();
-	// 	fs.writeFile(`static/photos/${slug}.jpg`, Buffer.from(arrayBuffer), (error) => {
-	// 		if (error) {
-	// 			console.log('writeFile error: ', error);
-	// 		}
-	// 	});
-	// 	console.log('Image file successfully created.');
-	// } catch (error) {
-	// 	return {
-	// 		statusCode: 400,
-	// 		body: `❌ Error while creating image file: "${error}"`
-	// 	};
-	// }
-
-	// try {
-	// 	await octokit.repos.createOrUpdateFileContents({
-	// 		owner: 'bellangerq',
-	// 		repo: 'personal-website-2022',
-	// 		path: 'src/content/photos/test.md',
-	// 		message: `(2) New photo: ${slug}`,
-	// 		branch: 'feat/netlify-cms-photos',
-	// 		content: Base64.encode('pouet pouet')
-	// 	});
-
-	// 	console.log('Successfully commited!');
-
-	// 	return {
-	// 		statusCode: 200,
-	// 		body: 'Successfully commited!'
-	// 	};
-	// } catch (error) {
-	// 	console.log('Error while committing: ', error);
-
-	// 	return {
-	// 		statusCode: 400,
-	// 		body: 'Error while commiting:' + error
-	// 	};
-	// }
-
-	const response = await fetch(imageUrl);
-	const arrayBuffer = await response.arrayBuffer();
-	const buffer = Buffer.from(arrayBuffer);
-	const image = buffer.toString('base64');
-
-	console.log(image);
-
-	await pushPhotoToGit(slug, image, markdown);
-
-	return {
-		statusCode: 200,
-		body: JSON.stringify({
-			pouet: 'pouet'
-		})
-	};
+	return getImage(imageUrl)
+		.then((image) => pushPhotoToGit(slug, image, markdown))
+		.catch((error) => {
+			return statusCode(400, `❌ Error while committing latest photo: "${error}"`);
+		});
 };
