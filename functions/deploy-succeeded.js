@@ -140,9 +140,10 @@ function getTweetUrl(tweetId) {
  */
 exports.handler = async () => {
 	console.log(process.env);
-	if (process.env.CONTEXT !== 'production') {
-		return statusCode(400, '⚠️ Not on main branch, abort.');
-	}
+	// TODO: handle deploy preview branches
+	// if (process.env.CONTEXT !== 'production') {
+	// 	return statusCode(400, '⚠️ Not on main branch, abort.');
+	// }
 	return getLatestResource()
 		.then(handleResource)
 		.catch((error) => {
