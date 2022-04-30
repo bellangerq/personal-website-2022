@@ -6,7 +6,7 @@ const octokit = new Octokit({
 });
 const GITHUB_USERNAME = 'bellangerq';
 const GITHUB_REPOSITORY = 'personal-website-2022';
-const GITHUB_BRANCH = 'feat/netlify-cms-photos';
+const GITHUB_BRANCH = 'main';
 
 async function getImage(imageUrl) {
 	try {
@@ -23,7 +23,7 @@ async function getImage(imageUrl) {
 
 async function pushPhotoToGit(slug, image, markdown) {
 	try {
-		// get latest commit from branch
+		// Get latest commit SHA
 		const commits = await octokit.repos.listCommits({
 			owner: GITHUB_USERNAME,
 			repo: GITHUB_REPOSITORY,
@@ -34,10 +34,6 @@ async function pushPhotoToGit(slug, image, markdown) {
 		const latestCommitSHA = commits.data[0].sha;
 
 		console.log('[listCommits] OK');
-
-		console.log('image');
-		console.log(image);
-		console.log('image');
 
 		const {
 			data: { sha: imageSHA }
@@ -50,7 +46,7 @@ async function pushPhotoToGit(slug, image, markdown) {
 
 		console.log('[createBlob] OK');
 
-		// set files to add
+		// Prepare files
 		const files = [
 			{
 				mode: '100644',
@@ -65,7 +61,7 @@ async function pushPhotoToGit(slug, image, markdown) {
 			}
 		];
 
-		// create tree
+		// Create tree ready to be committed
 		const {
 			data: { sha: treeSHA }
 		} = await octokit.git.createTree({
@@ -77,7 +73,7 @@ async function pushPhotoToGit(slug, image, markdown) {
 
 		console.log('[createTree] OK');
 
-		// create commit
+		// Create commit with files
 		const {
 			data: { sha: newCommitSHA }
 		} = await octokit.git.createCommit({
@@ -90,7 +86,7 @@ async function pushPhotoToGit(slug, image, markdown) {
 
 		console.log('[createCommit] OK');
 
-		// push content (git push)
+		// Push content
 		const response = await octokit.git.updateRef({
 			owner: GITHUB_USERNAME,
 			repo: GITHUB_REPOSITORY,
@@ -121,35 +117,20 @@ function statusCode(code, message) {
 }
 
 exports.handler = async (event, context) => {
-	console.log(event);
-	console.log('---------');
-
-	// Extract form data
 	const data = JSON.parse(event.body);
 
-	// use fake data for dev
-	// const password = 'pouet'
-	// const lang = 'fr';
-	// const alt = 'pouet';
-	// const syndicate = 'true';
-	// const description = 'Une description chouette.';
-	// const date = new Date('2022-04-29T19:04:20.113Z');
-	// const imageUrl = 'https://quentin-bellanger.com/photos/2018-11-17-1542477368.jpg';
-
-	// if (process.env.NODE_ENV === 'production') {
+	// Verify password
 	const password = data.payload.data.password;
 
 	if (password !== process.env.CMS_PASSWORD) {
 		return statusCode(400, `❌ Error while publishing photo: wrong password.`);
 	}
 
-	const lang = data.payload.data.lang;
-	const alt = data.payload.data.alt;
+	// Extract form data
+	const { lang, alt, description } = data.payload.data;
 	const syndicate = data.payload.data.syndicate === 'on';
-	const description = data.payload.data.description;
 	const date = new Date(data.payload.created_at);
 	const imageUrl = data.payload.data.image.url;
-	// }
 
 	const formattedDate = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${(
 		'0' + date.getDate()
@@ -157,7 +138,6 @@ exports.handler = async (event, context) => {
 	// Pog: https://stackoverflow.com/a/221297
 	const timestamp = Math.floor(+date / 1000);
 
-	// Create Markdown file
 	const slug = `${formattedDate}-${timestamp}`;
 	const markdown = `---\nlang: ${lang}\ndate: ${formattedDate}\nalt: ${alt}\nsyndicate: ${syndicate}\n---\n\n${description}`;
 
