@@ -139,7 +139,7 @@ exports.handler = async (event, context) => {
 	const timestamp = Math.floor(+date / 1000);
 
 	const slug = `${formattedDate}-${timestamp}`;
-	const markdown = `---\nlang: ${lang}\ndate: ${formattedDate}\nalt: ${alt}\nsyndicate: ${syndicate}\n---\n\n${description}`;
+	const markdown = `---\nlang: ${lang}\ndate: ${formattedDate}\nalt: |\n  ${alt}\nsyndicate: ${syndicate}\n---\n\n${description}`;
 
 	return getImage(imageUrl)
 		.then((image) => pushPhotoToGit(slug, image, markdown))

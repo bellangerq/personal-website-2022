@@ -30,7 +30,7 @@ async function getLatestResource() {
 /**
  * Search for tweets containing resource URL.
  * If none is found, publish a new tweet.
- * @param {object} post
+ * @param {object} resource
  */
 async function handleResource(resource) {
 	if (!resource) {
@@ -42,13 +42,18 @@ async function handleResource(resource) {
 	if (res.meta.result_count === 0) {
 		return sendTweet(resource);
 	} else {
-		return statusCode(400, '⚠️ The latest resource has already been syndicated on Twitter.');
+		return statusCode(
+			400,
+			`⚠️ The latest resource has already been syndicated on Twitter: ${getTweetUrl(
+				res.data.data[0].id
+			)}`
+		);
 	}
 }
 
 /**
  * Make a post request to publish a new tweet.
- * @param {object} post Blog post
+ * @param {object} resource
  */
 async function sendTweet(resource) {
 	const payload = {
