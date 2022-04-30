@@ -101,7 +101,7 @@ async function pushPhotoToGit(slug, image, markdown) {
 		console.log('[updateRef] OK');
 		return statusCode(200, '✅ Photo has been successfully committed.');
 	} catch (error) {
-		return statusCode(400, `❌ Error while committing photo: "${error}"`);
+		return statusCode(400, `❌ Error while publishing photo: "${error}"`);
 	}
 }
 
@@ -128,6 +128,7 @@ exports.handler = async (event, context) => {
 	const data = JSON.parse(event.body);
 
 	// use fake data for dev
+	// const password = 'pouet'
 	// const lang = 'fr';
 	// const alt = 'pouet';
 	// const syndicate = 'true';
@@ -136,9 +137,15 @@ exports.handler = async (event, context) => {
 	// const imageUrl = 'https://quentin-bellanger.com/photos/2018-11-17-1542477368.jpg';
 
 	// if (process.env.NODE_ENV === 'production') {
+	const password = data.payload.data.password;
+
+	if (password !== process.env.CMS_PASSWORD) {
+		return statusCode(400, `❌ Error while publishing photo: wrong password.`);
+	}
+
 	const lang = data.payload.data.lang;
 	const alt = data.payload.data.alt;
-	const syndicate = data.payload.data.syndicate;
+	const syndicate = data.payload.data.syndicate === 'on';
 	const description = data.payload.data.description;
 	const date = new Date(data.payload.created_at);
 	const imageUrl = data.payload.data.image.url;
@@ -157,6 +164,6 @@ exports.handler = async (event, context) => {
 	return getImage(imageUrl)
 		.then((image) => pushPhotoToGit(slug, image, markdown))
 		.catch((error) => {
-			return statusCode(400, `❌ Error while committing latest photo: "${error}"`);
+			return statusCode(400, `❌ Error while publishing photo: "${error}"`);
 		});
 };

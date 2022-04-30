@@ -28,5 +28,8 @@
 	<label for="syndicate">Syndiquer</label>
 	<input type="checkbox" id="syndicate" name="syndicate" checked />
 
+	<label for="password">Mot de passe</label>
+	<input type="password" id="password" name="password" />
+
 	<button type="submit">Envoyer</button>
 </form>
