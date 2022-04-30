@@ -126,20 +126,22 @@ exports.handler = async (event, context) => {
 
 	// Extract form data
 	const data = JSON.parse(event.body);
-	let lang = 'fr';
-	let alt = 'pouet';
-	let syndicate = 'true';
-	let description = 'Une description chouette.';
-	let date = new Date('2022-04-29T19:04:20.113Z');
-	let imageUrl = 'https://quentin-bellanger.com/photos/2018-11-17-1542477368.jpg';
+
+	// use fake data for dev
+	// const lang = 'fr';
+	// const alt = 'pouet';
+	// const syndicate = 'true';
+	// const description = 'Une description chouette.';
+	// const date = new Date('2022-04-29T19:04:20.113Z');
+	// const imageUrl = 'https://quentin-bellanger.com/photos/2018-11-17-1542477368.jpg';
 
 	// if (process.env.NODE_ENV === 'production') {
-	lang = data.payload.lang;
-	alt = data.payload.alt;
-	syndicate = data.payload.syndicate;
-	description = data.payload.description;
-	date = new Date(data.payload.created_at);
-	imageUrl = data.payload.data.image.url;
+	const lang = data.payload.data.lang;
+	const alt = data.payload.data.alt;
+	const syndicate = data.payload.data.syndicate;
+	const description = data.payload.data.description;
+	const date = new Date(data.payload.created_at);
+	const imageUrl = data.payload.data.image.url;
 	// }
 
 	const formattedDate = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${(
