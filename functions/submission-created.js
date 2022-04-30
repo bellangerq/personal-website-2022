@@ -35,6 +35,10 @@ async function pushPhotoToGit(slug, image, markdown) {
 
 		console.log('[listCommits] OK');
 
+		console.log('image');
+		console.log(image);
+		console.log('image');
+
 		const {
 			data: { sha: imageSHA }
 		} = await octokit.rest.git.createBlob({
