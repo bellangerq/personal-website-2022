@@ -139,7 +139,7 @@ function getTweetUrl(tweetId) {
  * Netlify lambda handler
  */
 exports.handler = async () => {
-	if (process.env.BRANCH !== 'main') {
+	if (process.env.CONTEXT !== 'production') {
 		return statusCode(400, '⚠️ Not on main branch, abort.');
 	}
 	return getLatestResource()
