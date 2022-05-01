@@ -31,7 +31,7 @@
 	<div class="field">
 		<label for="image">
 			Image
-			<small class="hint">Idéalement une image carrée ou au format paysage.</small>
+			<small class="hint">Format carré ou paysage avec une largeur maximum de 1000 pixels.</small>
 		</label>
 		<input class="image-field" required accept="image/*" type="file" id="image" name="image" />
 	</div>
