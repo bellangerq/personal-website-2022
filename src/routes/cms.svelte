@@ -38,7 +38,7 @@
 
 	<fieldset>
 		<legend>Langue</legend>
-		<small class="hint">Idéalement une image carrée ou au format paysage.</small>
+		<small class="hint">En fonction de la description et du texte alternatif.</small>
 		<div class="subfield">
 			<input type="radio" id="lang-fr" name="lang" value="fr" checked />
 			<label for="lang-fr"> Français </label>
@@ -59,7 +59,7 @@
 	</div>
 
 	<div class="field">
-		<label for="alt">Text alternatif</label>
+		<label for="alt">Texte alternatif</label>
 		<textarea required id="alt" name="alt" rows="5" />
 	</div>
 
