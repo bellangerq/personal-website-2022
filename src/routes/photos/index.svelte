@@ -39,13 +39,13 @@
 
 <PageHead
 	title="Photos - Quentin Bellanger"
-	description="Loin d'être un professionnel de la photo, il m'arrive parfois d'en prendre avec mon smartphone."
+	description="Des moments de vie que j'apprécie, capturés en photo souvent via mon smartphone."
 />
 
 <h1>Photos</h1>
 
 <p class="intro">
-	Loin d'être un professionnel de la photo, il m'arrive parfois d'en prendre avec mon smartphone.
+	Des moments de vie que j'apprécie, capturés en photo souvent via mon smartphone.
 </p>
 
 <ul class="photo-list">
