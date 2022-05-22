@@ -94,7 +94,7 @@ async function sendTweet(resource) {
 		);
 	} catch (err) {
 		console.log(err);
-		return statusCode(400, `❌ Error while sending tweet: ${error}`);
+		return statusCode(400, `❌ Error while sending tweet: ${err}`);
 	}
 }
 
@@ -103,9 +103,8 @@ async function sendTweet(resource) {
  * @param {string} slug Blog post slug
  */
 function buildResourceUrl(resource) {
-	return `${process.env.BASE_URL}/${resource.type === 'post' ? 'blog' : 'photos'}/${
-		resource.slug
-	}/`;
+	return `${process.env.BASE_URL}/${resource.type === 'post' ? 'blog' : 'photos'}/${resource.slug
+		}/`;
 }
 
 /**
