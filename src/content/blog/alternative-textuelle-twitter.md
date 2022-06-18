@@ -6,7 +6,7 @@ lang: fr
 syndicate: false
 ---
 
-La semaine dernière, on a eu le droit à [une entreprise qui a invoqué l’excuse du "nous n’avons pas les moyens pour mettre des alternatives textuelles aux images"](https://twitter.com/BelovedYemaya/status/1537873848242167808). Je vous montre comment faire et que non, ça n’est vraiment pas une question de moyen.
+Cette semaine, on a eu le droit à [une entreprise qui a invoqué l’excuse du "nous n’avons pas les moyens pour mettre des alternatives textuelles aux images"](https://twitter.com/BelovedYemaya/status/1537873848242167808). Je vous montre comment faire et que non, ça n’est vraiment pas une question de moyen.
 
 ## C’est quoi le problème ?
 
