@@ -24,6 +24,10 @@ async function getLatestResource() {
 		...photos.filter((photo) => photo.syndicate).map((photo) => ({ ...photo, type: 'photo' }))
 	].sort((a, b) => new Date(b.date) - new Date(a.date));
 
+	if (isDateOlderThanFiveDay(resources[0].date)) {
+		throw '⚠️ The latest resource is too old to be tweeted.';
+	}
+
 	return resources[0];
 }
 
@@ -103,8 +107,9 @@ async function sendTweet(resource) {
  * @param {string} slug Blog post slug
  */
 function buildResourceUrl(resource) {
-	return `${process.env.BASE_URL}/${resource.type === 'post' ? 'blog' : 'photos'}/${resource.slug
-		}/`;
+	return `${process.env.BASE_URL}/${resource.type === 'post' ? 'blog' : 'photos'}/${
+		resource.slug
+	}/`;
 }
 
 /**
@@ -129,6 +134,18 @@ function statusCode(code, message) {
  */
 function stripHtml(string) {
 	return string.trim().replace(/<[^>]+>/g, '');
+}
+
+/**
+ * Check if date is older than 5 days.
+ * @param {string} date
+ */
+function isDateOlderThanFiveDay(date) {
+	const resourceDate = new Date(date);
+	const now = new Date();
+	const fiveDayDate = new Date(now.setDate(now.getDate() - 5));
+
+	return resourceDate < fiveDayDate;
 }
 
 /**
