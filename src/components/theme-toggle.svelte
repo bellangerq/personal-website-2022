@@ -75,11 +75,11 @@
 	aria-label={`Passer en thème ${currentTheme === THEMES.light ? 'sombre' : 'clair'}`}
 >
 	{#if currentTheme === THEMES.dark}
-		<div in:hello out:goodbye>
+		<div in:hello|global out:goodbye|global>
 			<Sun />
 		</div>
 	{:else}
-		<div in:hello out:goodbye>
+		<div in:hello|global out:goodbye|global>
 			<Moon />
 		</div>
 	{/if}
