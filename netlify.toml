@@ -1,9 +1,6 @@
 [build]
-  command = "yarn build"
-  publish = "build"
-
-[functions]
-  directory = 'functions'
+command = "yarn build"
+publish = "build"
 
 [dev]
-  autoLaunch = false
+autoLaunch = false
