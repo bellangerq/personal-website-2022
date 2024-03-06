@@ -17,9 +17,9 @@ Sur Twitter, une image sans alternative textuelle est vocalisée par défault "I
 ## Comment ajouter une alternative textuelle sur Twitter
 
 1. Ajoutez l’image dans le tweet et cliquez sur "Ajouter description".
-   ![Capture de l’interface de Twitter pour créer un tweet. Une image a été ajoutée et une flèche pointe vers le bouton pour y ajouter une alternative textuelle](../../../static/images/alt-twitter-1.png)
+   ![Capture de l’interface de Twitter pour créer un tweet. Une image a été ajoutée et une flèche pointe vers le bouton pour y ajouter une alternative textuelle](/images/alt-twitter-1.png)
 2. Rédigez votre description et cliquez sur "Enregistrer".
-   ![Capture de l’interface de Twitter pour ajouter une alternative textuelle à une image. Une flèche pointe vers le champ textuel et une autre vers le bouton pour enregistrer](../../../static/images/alt-twitter-2.png)
+   ![Capture de l’interface de Twitter pour ajouter une alternative textuelle à une image. Une flèche pointe vers le champ textuel et une autre vers le bouton pour enregistrer](/images/alt-twitter-2.png)
 
 Voilà c’est pas compliqué et c’est loin d’être une question de moyens (financiers ou humains d’ailleurs). Mais plutôt une question d’envie et de volonté : est-ce que vous avez envie de rendre le web plus inclusif ? Ou est-ce que vous préférez exclure une partie de la population ?
 
