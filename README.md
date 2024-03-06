@@ -35,3 +35,10 @@ Every push on `main` branch will trigger a deploy on Netlify.
 ## To do
 
 - Resize photos with [Netlify Large Media](https://docs.netlify.com/large-media/overview/) or [Cloudinary](https://github.com/cloudinary/cloudinary-svelte). Width = 300px on `/photos/`.
+
+## Migration SvelteKit 2
+
+- Photos
+- Passer en TS
+- Clean props
+- Linter

@@ -17,17 +17,16 @@
 
 <GlobalHead />
 
-<!-- Dirty hack: put rel="external" so the focus order is not broken. -->
-<a class="skip" rel="external" href="#main">Aller au contenu principal</a>
+<a class="skip" href="#main">Aller au contenu principal</a>
 
 <header class="header">
 	<nav>
 		<ul class="menu">
 			{#each links as link}
 				<li>
-					<a class="item" aria-current={$page.url.pathname === link.href} href={link.href}
-						>{link.title}</a
-					>
+					<a class="item" aria-current={$page.url.pathname === link.href} href={link.href}>
+						{link.title}
+					</a>
 				</li>
 			{/each}
 		</ul>

@@ -1,19 +1,8 @@
-<script context="module">
-	export async function load({ fetch }) {
-		const response = await fetch(`/api/posts.json`);
-		const { posts } = await response.json();
-
-		return {
-			props: { posts }
-		};
-	}
-</script>
-
 <script>
 	import PageHead from '../../components/page-head.svelte';
 	import Date from '../../components/date.svelte';
 
-	export let posts;
+	export let data
 </script>
 
 <PageHead
@@ -32,7 +21,7 @@ web."
 </p>
 
 <ul class="post-list">
-	{#each posts as post}
+	{#each data.posts as post}
 		<li class="h-entry">
 			<h2 class="post-title p-name">
 				<a class="post-link u-url" href={`/blog/${post.slug}`}>{post.title}</a>

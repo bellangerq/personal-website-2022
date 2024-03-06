@@ -1,40 +1,9 @@
-<script context="module">
-	export async function load({ fetch }) {
-		const response = await fetch(`/api/photos.json`);
-		const { photos } = await response.json();
-
-		return {
-			props: { photos }
-		};
-	}
-</script>
-
 <script>
-	import { onMount } from 'svelte';
-
 	import PageHead from '../../components/page-head.svelte';
 	import Date from '../../components/date.svelte';
 	import { formatDate } from '$lib/date';
 
-	function handleIntersect(entries, observer) {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.removeAttribute('loading');
-			}
-			observer.unobserve(entry.target);
-		});
-	}
-
-	onMount(() => {
-		const images = document.querySelectorAll('.photo-img');
-		const observer = new IntersectionObserver(handleIntersect);
-
-		images.forEach((el) => {
-			observer.observe(el);
-		});
-	});
-
-	export let photos;
+	export let data;
 </script>
 
 <PageHead
@@ -49,7 +18,7 @@
 </p>
 
 <ul class="photo-list">
-	{#each photos as photo}
+	{#each data.photos as photo}
 		<li class="photo-item">
 			<a href={`/photos/${photo.slug}`}>
 				<span class="visually-hidden">Photo du {formatDate(photo.date)}</span>

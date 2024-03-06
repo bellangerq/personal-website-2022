@@ -1,12 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import Download from '../assets/icons/download.svelte';
-	import Bookmark from '../assets/icons/bookmark.svelte';
-	import Briefcase from '../assets/icons/briefcase.svelte';
-	import PageHead from '../components/page-head.svelte';
-	import Experience from '../components/experience.svelte';
-	import '../assets/style/_print.scss';
+	import Download from '../../assets/icons/download.svelte';
+	import Bookmark from '../../assets/icons/bookmark.svelte';
+	import Briefcase from '../../assets/icons/briefcase.svelte';
+	import PageHead from '../../components/page-head.svelte';
+	import Experience from '../../components/experience.svelte';
+	import '../../assets/style/_print.scss';
 
 	function print() {
 		window.print();
@@ -159,6 +159,7 @@
 		<Experience class="experience" {...training} />
 	{/each}
 </ul>
+
 
 <style lang="scss">
 	.download {
