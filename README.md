@@ -40,4 +40,3 @@ Every push on `main` branch will trigger a deploy on Netlify.
 
 - Passer en TS
 - Clean props
-- Linter

@@ -57,7 +57,7 @@
   function hello() {
     return {
       duration: 200,
-      css: (t, u) => `opacity: ${t}; transform: scale(${t})`
+      css: (t) => `opacity: ${t}; transform: scale(${t})`
     };
   }
 
