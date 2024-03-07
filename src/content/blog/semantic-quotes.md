@@ -27,12 +27,12 @@ This is the most popular one. It wraps the quote inside a `<blockquote>` tag and
 
 ```html
 <blockquote cite="https://www.brainyquote.com/quotes/michael_jordan_127660">
-	<p>
-		I've missed more than 9000 shots in my career. I've lost almost 300 games. 26 times, I've been
-		trusted to take the game winning shot and missed. I've failed over and over and over again in my
-		life. And that is why I succeed.
-	</p>
-	<span>Michael Jordan</span>
+  <p>
+    I've missed more than 9000 shots in my career. I've lost almost 300 games. 26 times, I've been
+    trusted to take the game winning shot and missed. I've failed over and over and over again in my
+    life. And that is why I succeed.
+  </p>
+  <span>Michael Jordan</span>
 </blockquote>
 ```
 
@@ -44,11 +44,11 @@ This one is preferred for short quotes or parts of a long quote. The quote shoul
 
 ```html
 <p>
-	As the famous scientist <span>Albert Einstein</span> once said,
-	<q cite="https://www.brainyquote.com/quotes/albert_einstein_103652"
-		>Everything should be made as simple as possible, but not simpler.</q
-	>
-	and as a minimalist I can't agree more.
+  As the famous scientist <span>Albert Einstein</span> once said,
+  <q cite="https://www.brainyquote.com/quotes/albert_einstein_103652"
+    >Everything should be made as simple as possible, but not simpler.</q
+  >
+  and as a minimalist I can't agree more.
 </p>
 ```
 

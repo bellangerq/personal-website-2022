@@ -14,14 +14,14 @@ On place un `addEventListener` sur l'événement `change` de la media query. Il 
 
 ```javascript
 window
-	.matchMedia('(prefers-color-scheme: dark)')
-	.addEventListener('change', ({ matches: isDark }) => {
-		if (isDark) {
-			// Toggle light mode.
-		} else {
-			// Toggle dark mode.
-		}
-	});
+  .matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', ({ matches: isDark }) => {
+    if (isDark) {
+      // Toggle light mode.
+    } else {
+      // Toggle dark mode.
+    }
+  });
 ```
 
 Pour en savoir plus : [MediaQueryList: change event (en)](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/change_event).

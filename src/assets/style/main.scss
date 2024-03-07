@@ -9,63 +9,63 @@
 @import './_markdown.scss';
 
 html {
-	font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 
-	@supports (font-variation-settings: normal) {
-		font-family: 'Inter var', sans-serif;
-	}
+  @supports (font-variation-settings: normal) {
+    font-family: 'Inter var', sans-serif;
+  }
 }
 
 body {
-	background: var(--c-background);
-	color: var(--c-content);
-	max-width: toRem(1200);
-	margin: 0 auto;
-	padding: toRem(16);
-	transition: background 0.2s ease;
+  background: var(--c-background);
+  color: var(--c-content);
+  max-width: toRem(1200);
+  margin: 0 auto;
+  padding: toRem(16);
+  transition: background 0.2s ease;
 }
 
 ::selection {
-	background-clip: initial;
-	-webkit-background-clip: initial;
-	-webkit-text-fill-color: initial;
-	background-color: var(--c-lightgray);
-	color: var(--c-background);
+  background-clip: initial;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-color: var(--c-lightgray);
+  color: var(--c-background);
 }
 
 *:focus:not(:focus-visible) {
-	outline: none;
+  outline: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		transition-duration: 0.01ms !important;
-	}
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 a,
 button,
 summary {
-	color: currentColor;
-	text-decoration: none;
-	cursor: pointer;
-	scroll-margin: toRem(24) 0;
+  color: currentColor;
+  text-decoration: none;
+  cursor: pointer;
+  scroll-margin: toRem(24) 0;
 
-	@include focus {
-		outline: toRem(3) solid var(--c-gradient-end);
-		outline-offset: toRem(2);
-	}
+  @include focus {
+    outline: toRem(3) solid var(--c-gradient-end);
+    outline-offset: toRem(2);
+  }
 }
 
 .visually-hidden {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

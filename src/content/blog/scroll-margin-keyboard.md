@@ -11,7 +11,7 @@ Parmi les choses que j'ai redécouvert en mettant à jour mon site, il y a la pr
 ```css
 /* Applique une marge en haut et en bas de 1.5rem */
 a {
-	scroll-margin: 1.5rem 0;
+  scroll-margin: 1.5rem 0;
 }
 ```
 

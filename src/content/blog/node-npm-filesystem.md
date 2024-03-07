@@ -41,7 +41,7 @@ The [`fs` module](https://nodejs.org/api/fs.html) comes with a handy `writeFileS
 
 ```javascript
 function generatePost(slug, date) {
-	fs.writeFileSync(`./content/${date}-${slug}.md`, 'Lorem ipsum dolor sit amet');
+  fs.writeFileSync(`./content/${date}-${slug}.md`, 'Lorem ipsum dolor sit amet');
 }
 ```
 

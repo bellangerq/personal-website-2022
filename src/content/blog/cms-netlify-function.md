@@ -1,12 +1,12 @@
 ---
 title: 'Un CMS maison à base de fonctions Netlify'
-description: "Des fonctions et un formulire Netlify pour un CMS léger et suffisant."
+description: 'Des fonctions et un formulire Netlify pour un CMS léger et suffisant.'
 date: 2022-05-10
 lang: 'fr'
 syndicate: true
 ---
 
-Après avoir téléchargé l'ensemble du contenu de mon compte Instagram pour le mettre sur mon site, je souhaitais pouvoir également *créer* du contenu. C'est un peu la partie 2 de mon précédent article : [Adieu Instagram](/blog/adieu-instagram). D'ailleurs, mon compte est officiellement supprimé demain ! 🎉
+Après avoir téléchargé l'ensemble du contenu de mon compte Instagram pour le mettre sur mon site, je souhaitais pouvoir également _créer_ du contenu. C'est un peu la partie 2 de mon précédent article : [Adieu Instagram](/blog/adieu-instagram). D'ailleurs, mon compte est officiellement supprimé demain ! 🎉
 
 J'ai donc réfléchi à comment, techniquement, je pouvais et voulais faire ça avec quelques conditions :
 
@@ -28,6 +28,7 @@ Après avoir joué avec Netlify CMS, j'ai tenté une approche à base de fonctio
 Quelques détails techniques sur ce système.
 
 - Un formulaire Netlify, c'est simplement un formulaire HTML avec un attribut `netlify` sur la balise `<form>`. Une fois soumis, les données sont accessibles depuis le dashboard Netlify. Un extrait de mon formulaire :
+
   ```html
   <form
     class="form"
@@ -48,10 +49,12 @@ Quelques détails techniques sur ce système.
     <!-- Reste du formulaire -->
   </form>
   ```
+
 - Netlify offre la possibilité de se brancher à des événements via des fonctions lambda (voir [Trigger functions on events](https://docs.netlify.com/functions/trigger-on-events/#available-triggers)). C'est pratique pour exécuter du code au moment opportun. Parmis ceux que j'utilise :
   - `deploy-succeeded` : se lance quand le site est build avec succès.
   - `submission-created` : se lance quand une soumission à un formulaire est faite.
 - J'utilise la librairie [`@octokit/rest`](https://octokit.github.io/rest.js) pour jouer avec l'API de GitHub et pouvoir créer des commits et pusher du contenu. Tout est disponile dans le [code de la fonction `submission-created`](https://github.com/bellangerq/personal-website-2022/blob/main/functions/submission-created.js). Mais brièvement ça ressemble à ça :
+
   ```javascript
   // Récupère les derniers commits
   const commits = await octokit.repos.listCommits({
@@ -80,6 +83,7 @@ Quelques détails techniques sur ce système.
     sha: newCommitSHA
   });
   ```
+
 - L'étape finale est la fonction `deploy-succeeded` qui va récupérer la dernière photo publiée et déterminer si elle a déjà été partagée sur Twitter ou non. Si ce n'est pas le cas, elle est tweetée grâce au package [twitter-api-v2](https://github.com/plhery/node-twitter-api-v2). J'ai grandement suivi l'exemple de l'article de Max Böck "[Syndicating Content to Twitter](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/)" que je vous conseille de lire pour plus de détails.
 
 ---

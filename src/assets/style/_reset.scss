@@ -5,21 +5,21 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
-	margin: 0;
+  margin: 0;
 }
 
 html,
 body {
-	height: 100%;
+  height: 100%;
 }
 
 body {
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 img,
@@ -27,8 +27,8 @@ picture,
 video,
 canvas,
 svg {
-	display: block;
-	max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 input,
@@ -37,11 +37,11 @@ textarea,
 select,
 fieldset,
 legend {
-	background: none;
-	border: none;
-	color: inherit;
-	font: inherit;
-	padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
 }
 
 p,
@@ -51,12 +51,12 @@ h3,
 h4,
 h5,
 h6 {
-	overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 ul,
 ol {
-	padding: 0;
-	margin: 0;
-	list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

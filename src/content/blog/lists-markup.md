@@ -23,10 +23,10 @@ Probably the most used list element rendered as a bulleted list by default (can 
 ```html
 <p>Rings of power</p>
 <ul>
-	<li>3 for the Elves</li>
-	<li>7 for the Dwarves</li>
-	<li>9 for the Men</li>
-	<li>1 for Sauron</li>
+  <li>3 for the Elves</li>
+  <li>7 for the Dwarves</li>
+  <li>9 for the Men</li>
+  <li>1 for Sauron</li>
 </ul>
 ```
 
@@ -37,9 +37,9 @@ As opposed to the previous one, this type of list ([`<ol>` element on MDN](https
 ```html
 <p>The Lord of the Rings movies</p>
 <ol>
-	<li>The fellowship of the ring</li>
-	<li>The two towers</li>
-	<li>The return of the king</li>
+  <li>The fellowship of the ring</li>
+  <li>The two towers</li>
+  <li>The return of the king</li>
 </ol>
 ```
 
@@ -55,14 +55,14 @@ Lists can have both a title and a description. That's why the `<dl>` ([descripti
 ```html
 <p>Hobbits</p>
 <dl>
-	<dt>Frodo</dt>
-	<dd>The one ring wearer.</dd>
+  <dt>Frodo</dt>
+  <dd>The one ring wearer.</dd>
 
-	<dt>Sam</dt>
-	<dd>Definitely the true hero.</dd>
+  <dt>Sam</dt>
+  <dd>Definitely the true hero.</dd>
 
-	<dt>Pippin</dt>
-	<dd>Clumsy but lovely guy.</dd>
+  <dt>Pippin</dt>
+  <dd>Clumsy but lovely guy.</dd>
 </dl>
 ```
 
@@ -73,22 +73,22 @@ As for many HTML elements, you can nest lists as much as you want (until you got
 ```html
 <p>Middle Earth movies:</p>
 <ul>
-	<li>
-		The Lord of the Rings
-		<ul>
-			<li>The Fellowship of the Ring</li>
-			<li>The Two Towers</li>
-			<li>The Return of the King</li>
-		</ul>
-	</li>
-	<li>
-		The Hobbit
-		<ul>
-			<li>An Unexpected Journey</li>
-			<li>The Desolation of Smaug</li>
-			<li>The Battle of the Five Armies</li>
-		</ul>
-	</li>
+  <li>
+    The Lord of the Rings
+    <ul>
+      <li>The Fellowship of the Ring</li>
+      <li>The Two Towers</li>
+      <li>The Return of the King</li>
+    </ul>
+  </li>
+  <li>
+    The Hobbit
+    <ul>
+      <li>An Unexpected Journey</li>
+      <li>The Desolation of Smaug</li>
+      <li>The Battle of the Five Armies</li>
+    </ul>
+  </li>
 </ul>
 ```
 
@@ -102,10 +102,10 @@ What we've seen before is the basic knowledge about HTML lists. But they allow u
 
   ```html
   <ol reversed>
-  	<li>1</li>
-  	<li>2</li>
-  	<li>3</li>
-  	<li>4</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
   </ol>
   ```
 
@@ -113,10 +113,10 @@ What we've seen before is the basic knowledge about HTML lists. But they allow u
 
   ```html
   <ol start="3">
-  	<li>1</li>
-  	<li>2</li>
-  	<li>3</li>
-  	<li>4</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
   </ol>
   ```
 
@@ -124,10 +124,10 @@ What we've seen before is the basic knowledge about HTML lists. But they allow u
 
   ```html
   <ol>
-  	<li>1</li>
-  	<li value="8">2</li>
-  	<li>3</li>
-  	<li>4</li>
+    <li>1</li>
+    <li value="8">2</li>
+    <li>3</li>
+    <li>4</li>
   </ol>
   ```
 

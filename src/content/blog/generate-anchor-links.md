@@ -39,11 +39,11 @@ Let's query the page for every needed headings (on this blog it is only `h2` and
 
 ```javascript
 const generateAnchorLinks = (headings) => {
-	headings.forEach((h) => {
-		const slug = slugify(h.innerText);
-		h.insertAdjacentHTML('beforeend', `<a href="#${slug}" class="anchor">#</a>`);
-		h.setAttribute('id', slug);
-	});
+  headings.forEach((h) => {
+    const slug = slugify(h.innerText);
+    h.insertAdjacentHTML('beforeend', `<a href="#${slug}" class="anchor">#</a>`);
+    h.setAttribute('id', slug);
+  });
 };
 ```
 
@@ -63,7 +63,7 @@ Headings would be rendered this way (I think the rendering should vary depending
 
 ```html
 <h2 id="lorem-ipsum">
-	<a href="#lorem-ipsum">Lorem ipsum dolor sit amet</a>
+  <a href="#lorem-ipsum">Lorem ipsum dolor sit amet</a>
 </h2>
 ```
 

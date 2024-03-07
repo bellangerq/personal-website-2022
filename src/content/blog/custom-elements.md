@@ -16,7 +16,7 @@ While the <abbr title="Hypertext Markup Language">HTML</abbr> reference defines 
 
 ```javascript
 class SubscribeForm extends HTMLElement {
-	/* definition, attributes, methods... */
+  /* definition, attributes, methods... */
 }
 
 window.customElements.define('subscribe-form', SubscribeForm);
@@ -61,10 +61,10 @@ Then the custom element has to be call in the HTML page with its attributes (don
 
 ```html
 <subscribe-form
-	required="true"
-	name="email"
-	label="Your email"
-	placeholder="eg: john@doe.com"
+  required="true"
+  name="email"
+  label="Your email"
+  placeholder="eg: john@doe.com"
 ></subscribe-form>
 ```
 

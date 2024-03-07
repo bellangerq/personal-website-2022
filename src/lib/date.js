@@ -4,9 +4,9 @@
  * @returns
  */
 export function formatDate(dateString) {
-	const formattedDate = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(
-		new Date(dateString)
-	);
+  const formattedDate = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(
+    new Date(dateString)
+  );
 
-	return formattedDate;
+  return formattedDate;
 }

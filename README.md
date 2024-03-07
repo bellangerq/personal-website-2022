@@ -38,7 +38,6 @@ Every push on `main` branch will trigger a deploy on Netlify.
 
 ## Migration SvelteKit 2
 
-- Photos
 - Passer en TS
 - Clean props
 - Linter

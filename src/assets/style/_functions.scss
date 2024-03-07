@@ -1,25 +1,25 @@
 @use 'sass:math';
 
 @function toRem($px) {
-	@if not $px {
-		@error 'Missing argument: `$px`.';
-	}
+  @if not $px {
+    @error 'Missing argument: `$px`.';
+  }
 
-	@return math.div($px, 16) + rem;
+  @return math.div($px, 16) + rem;
 }
 
 @mixin focus {
-	&:focus {
-		@content;
-	}
+  &:focus {
+    @content;
+  }
 
-	&:focus-visible {
-		@content;
-	}
+  &:focus-visible {
+    @content;
+  }
 }
 
 @mixin small {
-	@media (max-width: $br-small) {
-		@content;
-	}
+  @media (max-width: $br-small) {
+    @content;
+  }
 }

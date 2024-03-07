@@ -52,7 +52,7 @@ Pour compléter l'exemple de l'échelle de tailles de police, la taille du titre
 
 ```css
 h1 {
-	font-size: clamp(2rem, 2rem + 0.8vw, 3rem);
+  font-size: clamp(2rem, 2rem + 0.8vw, 3rem);
 }
 ```
 
@@ -60,9 +60,9 @@ Un autre exemple : pouvoir créer une grille avec CSS grid qui bascule sur plusi
 
 ```css
 .grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-	gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
 }
 ```
 

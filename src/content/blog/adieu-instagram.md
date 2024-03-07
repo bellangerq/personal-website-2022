@@ -41,9 +41,9 @@ Avec ce script, j'ai pu rappatrier l'ensemble de mes photos sur mon site dans un
  * Source: https://stackoverflow.com/a/68237082
  */
 function unicodeToChar(s) {
-	let d = new TextDecoder();
-	let a = s.split('').map((r) => r.charCodeAt());
-	return d.decode(new Uint8Array(a));
+  let d = new TextDecoder();
+  let a = s.split('').map((r) => r.charCodeAt());
+  return d.decode(new Uint8Array(a));
 }
 ```
 

@@ -32,26 +32,26 @@ This API is asynchronous and thus returns a promise once called. Here is the bas
 
 ```javascript
 navigator.clipboard
-	.writeText(text)
-	.then(() => {
-		console.log(`"${text}" was copied to the clipboard.`);
-	})
-	.catch((err) => {
-		console.error(`Error copying text to the clipboard: ${err}.`);
-	});
+  .writeText(text)
+  .then(() => {
+    console.log(`"${text}" was copied to the clipboard.`);
+  })
+  .catch((err) => {
+    console.error(`Error copying text to the clipboard: ${err}.`);
+  });
 ```
 
 To get access to the clipboard's content and paste it, you first need the user's permission. Then it's pretty similar:
 
 ```javascript
 navigator.clipboard
-	.readText()
-	.then((text) => {
-		console.log(`Pasted text: ${text}.`);
-	})
-	.catch((err) => {
-		console.error(`Error pasting the clipboard's content: ${err}.`);
-	});
+  .readText()
+  .then((text) => {
+    console.log(`Pasted text: ${text}.`);
+  })
+  .catch((err) => {
+    console.error(`Error pasting the clipboard's content: ${err}.`);
+  });
 ```
 
 Compared to `execCommand()`, this solution is a bit longer but I find it easier to read and the asynchronous part makes it painless to perform other tasks until the promise is resolved. You can see a [live version on CodePen](https://codepen.io/bellangerq/full/VBqOPG).

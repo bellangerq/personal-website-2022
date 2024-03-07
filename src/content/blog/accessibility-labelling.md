@@ -37,10 +37,10 @@ Let's say we have a list of cards. Each card contains an image, a title, a descr
 
 ```html
 <li>
-	<img src="path/to/image.jpg" alt="Some random image alt text" />
-	<h2>How to label things?</h2>
-	<p>Lorem ipsum dolor sit amet...</p>
-	<a href="/card-link">Read more</a>
+  <img src="path/to/image.jpg" alt="Some random image alt text" />
+  <h2>How to label things?</h2>
+  <p>Lorem ipsum dolor sit amet...</p>
+  <a href="/card-link">Read more</a>
 </li>
 ```
 
@@ -50,10 +50,10 @@ If a screen reader is reading the list items, it will read for every item the im
 
 ```html
 <li>
-	<img src="path/to/image.jpg" alt="Some random image alt text" />
-	<h2>How to label things?</h2>
-	<p>Lorem ipsum dolor sit amet...</p>
-	<a href="/card-link" aria-label="Follow the tutorial about labelling things">Read more</a>
+  <img src="path/to/image.jpg" alt="Some random image alt text" />
+  <h2>How to label things?</h2>
+  <p>Lorem ipsum dolor sit amet...</p>
+  <a href="/card-link" aria-label="Follow the tutorial about labelling things">Read more</a>
 </li>
 ```
 
@@ -63,10 +63,10 @@ The link will be announced "**Follow the tutorial about labelling things**". The
 
 ```html
 <li>
-	<img src="path/to/image.jpg" alt="Some random image alt text" />
-	<h2 id="title">How to label things?</h2>
-	<p>Lorem ipsum dolor sit amet...</p>
-	<a href="/card-link" aria-hidden="true" aria-labelledby="title">Read more</a>
+  <img src="path/to/image.jpg" alt="Some random image alt text" />
+  <h2 id="title">How to label things?</h2>
+  <p>Lorem ipsum dolor sit amet...</p>
+  <a href="/card-link" aria-hidden="true" aria-labelledby="title">Read more</a>
 </li>
 ```
 

@@ -1,29 +1,33 @@
 {
-	"name": "personal-website-2022",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-netlify": "^1.0.0-next.88",
-		"@sveltejs/kit": "^1.20.4",
-		"eslint": "^7.32.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"mdsvex": "^0.9.8",
-		"prettier": "^2.4.1",
-		"prettier-plugin-svelte": "^2.10.1",
-		"sass": "^1.71.1",
-		"svelte": "^4.0.0",
-		"svelte-preprocess": "^5.0.3",
-		"vite": "^5.1.5"
-	},
-	"type": "module",
-	"dependencies": {
-		"remark-unwrap-images": "^3.0.1"
-	}
+  "name": "personal-website-2022",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-netlify": "^1.0.0-next.88",
+    "@sveltejs/kit": "^1.20.4",
+    "@types/eslint": "^8.56.5",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.35.1",
+    "mdsvex": "^0.9.8",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
+    "sass": "^1.71.1",
+    "svelte": "^4.0.0",
+    "svelte-preprocess": "^5.0.3",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.5"
+  },
+  "type": "module",
+  "dependencies": {
+    "remark-unwrap-images": "^3.0.1"
+  }
 }

@@ -13,10 +13,10 @@ Voici une courte fonction Sass pour avoir les avantages des deux solutions :
 ```scss
 // Convertit une valeur en pixel en rem.
 @function toRem($px) {
-	@if not $px {
-		@error 'Missing argument: `$px`.';
-	}
-	@return math.div($px, 16) + rem;
+  @if not $px {
+    @error 'Missing argument: `$px`.';
+  }
+  @return math.div($px, 16) + rem;
 }
 ```
 
@@ -26,6 +26,6 @@ Voici un exemple d'utilisation où on voit que la taille de police du `h1` sera 
 
 ```scss
 h1 {
-	font-size: toRem(44); // Retourne `2.75rem`
+  font-size: toRem(44); // Retourne `2.75rem`
 }
 ```

@@ -5,7 +5,6 @@ node_modules
 /package
 .env
 .netlify
-instagram_data
 
 # Ignore draft articles
 /src/content/blog/*.draft.md

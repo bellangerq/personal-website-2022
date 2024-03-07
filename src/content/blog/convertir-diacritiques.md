@@ -20,6 +20,7 @@ removeDiacritics('àéèçùñ') // Retourne "aeecun"
 ```
 
 L'explication est très bien détaillé sur [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize#description) mais de ce que j'ai compris :
+
 - `normalize()` prend chaque caractère de la string et le remplace par sa bonne version selon le référentiel défini.
-- Le référentiel "NFD" décompose les caractères en plusieurs *code points*. Par exemple la lettre suivi de l'accent pour `é` : `\u0065` + `\u0301`.
+- Le référentiel "NFD" décompose les caractères en plusieurs _code points_. Par exemple la lettre suivi de l'accent pour `é` : `\u0065` + `\u0301`.
 - La fonction `replace()` se charge de supprimer les caractères qui correspondent aux diacritiques.

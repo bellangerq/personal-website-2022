@@ -15,10 +15,10 @@ Mais pour imprimer sur le web, il faut prendre en compte quelques considération
 - Vérifier que le mode sombre ne s'applique pas (pour éviter la consommation d'encre inutile).
   ```css
   @media not print {
-  	html.dark {
-  		/* Variables CSS du mode sombre */
-  		--c-background: #121212;
-  	}
+    html.dark {
+      /* Variables CSS du mode sombre */
+      --c-background: #121212;
+    }
   }
   ```
 

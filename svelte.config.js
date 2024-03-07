@@ -10,22 +10,22 @@ const sassGlobalData = `
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		adapter: adapter()
-	},
-	extensions: ['.svelte', '.svx', '.md'],
-	preprocess: [
-		mdsvex({
-			extensions: ['.svx', '.md'],
-			layout: './src/components/mdsvex/layout.svelte',
-			remarkPlugins: [remarkUnwrapImages]
-		}),
-		sveltePreprocess({
-			scss: {
-				prependData: sassGlobalData
-			}
-		})
-	]
+  kit: {
+    adapter: adapter()
+  },
+  extensions: ['.svelte', '.svx', '.md'],
+  preprocess: [
+    mdsvex({
+      extensions: ['.svx', '.md'],
+      layout: './src/components/mdsvex/layout.svelte',
+      remarkPlugins: [remarkUnwrapImages]
+    }),
+    sveltePreprocess({
+      scss: {
+        prependData: sassGlobalData
+      }
+    })
+  ]
 };
 
 export default config;

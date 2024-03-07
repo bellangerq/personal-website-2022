@@ -56,8 +56,8 @@ editorContent.innerHTML = localStorage['content'] || defaultContent;
 
 // Define the saving function
 let save = () => {
-	localStorage['title'] = editorTitle.innerHTML;
-	localStorage['content'] = editorContent.innerHTML;
+  localStorage['title'] = editorTitle.innerHTML;
+  localStorage['content'] = editorContent.innerHTML;
 };
 
 // Launch the function
@@ -78,7 +78,7 @@ I was surprised how easy it was to implement these options. JavaScript has nativ
 ```javascript
 // Define your styling function
 let addStyle = (style) => {
-	document.execCommand(style);
+  document.execCommand(style);
 };
 
 // Call the function on click

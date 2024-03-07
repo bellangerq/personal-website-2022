@@ -33,18 +33,18 @@ Imagine we want to render a list of definitions inside a `dl` with a `v-for`. Ho
 ```html
 <!-- DON'T -->
 <dl>
-	<div v-for="def in definitions">
-		<dt>{{ def.title }}</dt>
-		<dd>{{ def.description }}</dd>
-	</div>
+  <div v-for="def in definitions">
+    <dt>{{ def.title }}</dt>
+    <dd>{{ def.description }}</dd>
+  </div>
 </dl>
 
 <!-- DO -->
 <dl>
-	<template v-for="def in definitions">
-		<dt>{{ def.title }}</dt>
-		<dd>{{ def.description }}</dd>
-	</template>
+  <template v-for="def in definitions">
+    <dt>{{ def.title }}</dt>
+    <dd>{{ def.description }}</dd>
+  </template>
 </dl>
 ```
 
@@ -56,11 +56,11 @@ One awesome feature of Vue are [slots](https://vuejs.org/v2/guide/components-slo
 
 ```html
 <template>
-	<div>
-		<p><slot name="title"></slot></p>
-		<!-- Some markup... -->
-		<div><slot name="body"></slot></div>
-	</div>
+  <div>
+    <p><slot name="title"></slot></p>
+    <!-- Some markup... -->
+    <div><slot name="body"></slot></div>
+  </div>
 </template>
 ```
 

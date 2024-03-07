@@ -5,105 +5,105 @@
 $br-small: toRem(600);
 
 $type-scale: (
-	xxxl: (
-		min: toRem(40),
-		base: toRem(20),
-		max: toRem(72),
-		scale: 5
-	),
-	xxl: (
-		min: toRem(28),
-		base: toRem(20),
-		max: toRem(40),
-		scale: 3
-	),
-	xl: (
-		min: toRem(24),
-		base: toRem(20),
-		max: toRem(32),
-		scale: 2
-	),
-	l: (
-		min: toRem(20),
-		base: toRem(16),
-		max: toRem(28),
-		scale: 1
-	),
-	m: (
-		min: toRem(16),
-		base: toRem(14),
-		max: toRem(20),
-		scale: 0.8
-	),
-	s: (
-		min: toRem(14),
-		base: toRem(12),
-		max: toRem(16),
-		scale: 0.8
-	),
-	xs: (
-		min: toRem(12),
-		base: toRem(10),
-		max: toRem(14),
-		scale: 0.9
-	)
+  xxxl: (
+    min: toRem(40),
+    base: toRem(20),
+    max: toRem(72),
+    scale: 5
+  ),
+  xxl: (
+    min: toRem(28),
+    base: toRem(20),
+    max: toRem(40),
+    scale: 3
+  ),
+  xl: (
+    min: toRem(24),
+    base: toRem(20),
+    max: toRem(32),
+    scale: 2
+  ),
+  l: (
+    min: toRem(20),
+    base: toRem(16),
+    max: toRem(28),
+    scale: 1
+  ),
+  m: (
+    min: toRem(16),
+    base: toRem(14),
+    max: toRem(20),
+    scale: 0.8
+  ),
+  s: (
+    min: toRem(14),
+    base: toRem(12),
+    max: toRem(16),
+    scale: 0.8
+  ),
+  xs: (
+    min: toRem(12),
+    base: toRem(10),
+    max: toRem(14),
+    scale: 0.9
+  )
 );
 
 :global {
-	html {
-		--c-background: #ffffff;
-		--c-content: #121212;
-		--c-lightgray: #4a4a4a;
-		--c-gradient-start: #1b1b9b;
-		--c-gradient-end: #10704d;
+  html {
+    --c-background: #ffffff;
+    --c-content: #121212;
+    --c-lightgray: #4a4a4a;
+    --c-gradient-start: #1b1b9b;
+    --c-gradient-end: #10704d;
 
-		@each $name, $size in $type-scale {
-			--t-#{$name}: clamp(
-				#{map.get($size, 'min')},
-				#{map.get($size, 'base')} + #{map.get($size, 'scale')} * 1vw,
-				#{map.get($size, 'max')}
-			);
-		}
+    @each $name, $size in $type-scale {
+      --t-#{$name}: clamp(
+        #{map.get($size, 'min')},
+        #{map.get($size, 'base')} + #{map.get($size, 'scale')} * 1vw,
+        #{map.get($size, 'max')}
+      );
+    }
 
-		--gradient-angle: 60deg;
+    --gradient-angle: 60deg;
 
-		--prism-block-background: var(--c-background);
-		--prism-base-color: var(--c-content);
-		--prism-highlight-background: var(--c-content);
-		--prism-highlight-accent: var(--c-content);
-		--prism-comment-color: var(--c-lightgray);
-		--prism-punctuation-color: var(--c-lightgray);
-		--prism-property-color: var(--c-gradient-end);
-		--prism-selector-color: var(--c-gradient-start);
-		--prism-operator-color: #7b5d40;
-		--prism-operator-bg: #121212;
-		--prism-variable-color: #a85a22;
-		--prism-function-color: #af3850;
-		--prism-keyword-color: #0574b7;
+    --prism-block-background: var(--c-background);
+    --prism-base-color: var(--c-content);
+    --prism-highlight-background: var(--c-content);
+    --prism-highlight-accent: var(--c-content);
+    --prism-comment-color: var(--c-lightgray);
+    --prism-punctuation-color: var(--c-lightgray);
+    --prism-property-color: var(--c-gradient-end);
+    --prism-selector-color: var(--c-gradient-start);
+    --prism-operator-color: #7b5d40;
+    --prism-operator-bg: #121212;
+    --prism-variable-color: #a85a22;
+    --prism-function-color: #af3850;
+    --prism-keyword-color: #0574b7;
 
-		@media not print {
-			&[data-theme='dark'] {
-				--c-background: #121212;
-				--c-content: #ffffff;
-				--c-lightgray: #d9d9d9;
-				--c-gradient-start: #6060f0;
-				--c-gradient-start: #7878f1;
-				--c-gradient-end: #36f2ad;
+    @media not print {
+      &[data-theme='dark'] {
+        --c-background: #121212;
+        --c-content: #ffffff;
+        --c-lightgray: #d9d9d9;
+        --c-gradient-start: #6060f0;
+        --c-gradient-start: #7878f1;
+        --c-gradient-end: #36f2ad;
 
-				--prism-block-background: var(--c-background);
-				--prism-base-color: var(--c-content);
-				--prism-highlight-background: var(--c-content);
-				--prism-highlight-accent: var(--c-content);
-				--prism-comment-color: #a3a4a4;
-				--prism-punctuation-color: #d9d9d9;
-				--prism-property-color: var(--c-gradient-end);
-				--prism-selector-color: #e2c86c;
-				--prism-operator-color: #a67f59;
-				--prism-operator-bg: #121212;
-				--prism-variable-color: #e17a2f;
-				--prism-function-color: #dd4a68;
-				--prism-keyword-color: var(--c-gradient-start);
-			}
-		}
-	}
+        --prism-block-background: var(--c-background);
+        --prism-base-color: var(--c-content);
+        --prism-highlight-background: var(--c-content);
+        --prism-highlight-accent: var(--c-content);
+        --prism-comment-color: #a3a4a4;
+        --prism-punctuation-color: #d9d9d9;
+        --prism-property-color: var(--c-gradient-end);
+        --prism-selector-color: #e2c86c;
+        --prism-operator-color: #a67f59;
+        --prism-operator-bg: #121212;
+        --prism-variable-color: #e17a2f;
+        --prism-function-color: #dd4a68;
+        --prism-keyword-color: var(--c-gradient-start);
+      }
+    }
+  }
 }

@@ -27,19 +27,19 @@ It's generally a `div`, often positioned with `position: fixed` so it can immedi
 
 ```html
 <body>
-	<header>
-		<!-- Cookies banner should be there -->
-		<div>...</div>
+  <header>
+    <!-- Cookies banner should be there -->
+    <div>...</div>
 
-		<!-- Skip to content link -->
-		<a> ... </a>
+    <!-- Skip to content link -->
+    <a> ... </a>
 
-		<!-- Website main navigation -->
-		<nav>...</nav>
-	</header>
+    <!-- Website main navigation -->
+    <nav>...</nav>
+  </header>
 
-	<!-- Main page content -->
-	<main>...</main>
+  <!-- Main page content -->
+  <main>...</main>
 </body>
 ```
 

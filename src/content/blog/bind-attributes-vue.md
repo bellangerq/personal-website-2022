@@ -19,20 +19,20 @@ This is a simplified version of the component:
 
 ```html
 <template>
-	<div class="InputComponent">
-		<input v-model="model" type="text" />
-	</div>
+  <div class="InputComponent">
+    <input v-model="model" type="text" />
+  </div>
 </template>
 
 <script>
-	export default {
-		name: 'InputComponent',
-		data() {
-			return {
-				model: ''
-			};
-		}
-	};
+  export default {
+    name: 'InputComponent',
+    data() {
+      return {
+        model: ''
+      };
+    }
+  };
 </script>
 ```
 
@@ -54,21 +54,21 @@ Then you can use the `v-bind` directive to spread this object on the desired ele
 
 ```html
 <template>
-	<div class="InputComponent">
-		<input v-model="model" type="text" v-bind="$attrs" />
-	</div>
+  <div class="InputComponent">
+    <input v-model="model" type="text" v-bind="$attrs" />
+  </div>
 </template>
 
 <script>
-	export default {
-		name: 'InputComponent',
-		inheritAttrs: false,
-		data() {
-			return {
-				model: ''
-			};
-		}
-	};
+  export default {
+    name: 'InputComponent',
+    inheritAttrs: false,
+    data() {
+      return {
+        model: ''
+      };
+    }
+  };
 </script>
 ```
 
@@ -76,7 +76,7 @@ And here is the rendered component:
 
 ```html
 <div class="InputComponent">
-	<input type="text" data-tracking="name" id="name" />
+  <input type="text" data-tracking="name" id="name" />
 </div>
 ```
 

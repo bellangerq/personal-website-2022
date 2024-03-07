@@ -1,89 +1,89 @@
 .markdown-content {
-	margin-bottom: toRem(64);
+  margin-bottom: toRem(64);
 }
 
 .markdown-content * + * {
-	margin-top: toRem(20);
+  margin-top: toRem(20);
 }
 
 .markdown-content li + li {
-	margin-top: toRem(12);
+  margin-top: toRem(12);
 }
 
 .markdown-content a {
-	text-decoration: underline;
-	transition: color 0.2s ease;
+  text-decoration: underline;
+  transition: color 0.2s ease;
 
-	&:hover {
-		color: var(--c-lightgray);
-		text-decoration: none;
-	}
+  &:hover {
+    color: var(--c-lightgray);
+    text-decoration: none;
+  }
 }
 
 .markdown-content ul,
 .markdown-content ol {
-	list-style: initial;
-	padding-left: toRem(16);
+  list-style: initial;
+  padding-left: toRem(16);
 }
 
 .markdown-content ol {
-	list-style: decimal;
+  list-style: decimal;
 }
 
 .markdown-content li::marker {
-	color: var(--c-gradient-start);
-	font-size: 0.8em;
+  color: var(--c-gradient-start);
+  font-size: 0.8em;
 }
 
 .markdown-content li:nth-child(odd)::marker {
-	color: var(--c-gradient-end);
+  color: var(--c-gradient-end);
 }
 
 .markdown-content blockquote {
-	font-style: italic;
-	padding: toRem(4) 0 toRem(4) toRem(16);
-	position: relative;
+  font-style: italic;
+  padding: toRem(4) 0 toRem(4) toRem(16);
+  position: relative;
 
-	&::before {
-		content: '';
-		background: linear-gradient(
-			var(--gradient-angle),
-			var(--c-gradient-start),
-			var(--c-gradient-end)
-		);
-		border-radius: toRem(2);
-		position: absolute;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		width: toRem(4);
-	}
+  &::before {
+    content: '';
+    background: linear-gradient(
+      var(--gradient-angle),
+      var(--c-gradient-start),
+      var(--c-gradient-end)
+    );
+    border-radius: toRem(2);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: toRem(4);
+  }
 }
 
 .markdown-content hr {
-	background: linear-gradient(
-		var(--gradient-angle),
-		var(--c-gradient-start),
-		var(--c-gradient-end)
-	);
-	border-radius: toRem(2);
-	height: toRem(2);
-	border: none;
-	margin: toRem(48) 0;
-	width: 50%;
+  background: linear-gradient(
+    var(--gradient-angle),
+    var(--c-gradient-start),
+    var(--c-gradient-end)
+  );
+  border-radius: toRem(2);
+  height: toRem(2);
+  border: none;
+  margin: toRem(48) 0;
+  width: 50%;
 }
 
 .markdown-content code:not([class*='language-']) {
-	border: toRem(1) solid var(--c-lightgray);
-	border-radius: toRem(4);
-	color: var(--c-lightgray);
-	font-size: 0.8em;
-	padding: toRem(2) toRem(2);
+  border: toRem(1) solid var(--c-lightgray);
+  border-radius: toRem(4);
+  color: var(--c-lightgray);
+  font-size: 0.8em;
+  padding: toRem(2) toRem(2);
 }
 
 .markdown-content pre {
-	border: toRem(2) solid var(--c-lightgray);
-	border-radius: toRem(4);
-	overflow: auto;
-	padding: toRem(8);
+  border: toRem(2) solid var(--c-lightgray);
+  border-radius: toRem(4);
+  overflow: auto;
+  padding: toRem(8);
 }
