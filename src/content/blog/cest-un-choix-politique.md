@@ -1,7 +1,7 @@
 ---
 title: 'C’est un choix politique'
 description: 'Où comment la mauvaise gestion de la canicule nous montre comment la classe politique et médiatique s’organise pour ne rien faire face à la catastrophe climatique.'
-date: 2026-07-01
+date: 2026-06-30
 lang: 'fr'
 syndicate: false
 ---
